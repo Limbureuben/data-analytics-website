@@ -11,6 +11,12 @@ import valueCuriosityImage from "../public/images/value-curiosity.png";
 import valueInnovationImage from "../public/images/value-innovation.png";
 
 const navigation = ["Home", "Services", "About", "Case Study", "Blog"];
+const serviceLinks = [
+  { label: "Data & Analytics", href: "/services#data-analytics" },
+  { label: "Technology & AI", href: "/services#technology-ai" },
+  { label: "Digital Campaigns & Media", href: "/services#digital-media" },
+  { label: "Innovation & Ventures", href: "/services#innovation-ventures" },
+];
 const SCRUB_DURATION_SECONDS = 5;
 const CONTENT_REVEAL_TIME_SECONDS = 3;
 
@@ -139,39 +145,27 @@ function CapabilityIcon({ type }: { type: string }) {
 const coreServices = [
   {
     number: "01",
-    title: "Narrative Intelligence for Sustainable Development",
+    title: "Data & Analytics",
     description:
-      "Cloud analytics tools that convert public narratives and program data into measurable insight aligned with sustainable development goals.",
+      "Turn complex data into clear direction through modern data platforms, business intelligence, predictive modelling and decision-ready dashboards.",
   },
   {
     number: "02",
-    title: "Social Research & Public Policy Analytics",
+    title: "Technology & AI",
     description:
-      "Evidence-driven research, monitoring and impact evaluation for policies, programs and public-sector decision making.",
+      "Build intelligent digital products with scalable cloud architecture, responsible AI, automation and machine-learning solutions designed around real needs.",
   },
   {
     number: "03",
-    title: "Public Opinion & Sentiment Analytics",
+    title: "Digital Campaigns & Media",
     description:
-      "Polling and social listening that reveal audience sentiment, emerging issues and the drivers behind public perception.",
+      "Create measurable audience impact with research-led strategy, compelling content, precision media planning and continuous campaign optimisation.",
   },
   {
     number: "04",
-    title: "Social Intelligence Research & Observatory",
+    title: "Innovation & Ventures",
     description:
-      "Continuous online and offline behavioural analysis to identify trends and deliver timely market and government intelligence.",
-  },
-  {
-    number: "05",
-    title: "Social Big Data & Predictive Intelligence",
-    description:
-      "Scalable data engineering, machine learning and AI that transform high-volume social data into forecasts and decision-ready insight.",
-  },
-  {
-    number: "06",
-    title: "On-Demand Analytics Services",
-    description:
-      "Flexible research, dashboard, modelling and advisory support tailored to analytics challenges beyond our core solutions.",
+      "Move ambitious ideas from opportunity to market through venture design, rapid validation, product incubation and strategic growth partnerships.",
   },
 ];
 
@@ -189,16 +183,22 @@ function ServiceIcon({ number }: { number: string }) {
   );
 }
 
-function CortexLogo() {
+function CortexLogo({ useImage = false }: { useImage?: boolean }) {
   return (
     <a className="brand" href="#home" aria-label="Cortex Data Indonesia home">
-      <svg className="brand-mark" viewBox="0 0 38 42" aria-hidden="true">
-        <path d="M19 0 38 10.5 27.7 16 19 11.2 10 16.2v10.2l9 4.8 8.8-4.8L38 32 19 42 0 31.5v-21Z" />
-      </svg>
-      <span className="brand-name">
-        <span>CORTEX DATA</span>
-        <span>INDONESIA</span>
-      </span>
+      {useImage ? (
+        <Image className="brand-logo-image" src="/images/logo3.png" alt="" width={112} height={45} priority />
+      ) : (
+        <svg className="brand-mark" viewBox="0 0 38 42" aria-hidden="true">
+          <path d="M19 0 38 10.5 27.7 16 19 11.2 10 16.2v10.2l9 4.8 8.8-4.8L38 32 19 42 0 31.5v-21Z" />
+        </svg>
+      )}
+      {!useImage && (
+        <span className="brand-name">
+          <span>CORTEX DATA</span>
+          <span>INDONESIA</span>
+        </span>
+      )}
     </a>
   );
 }
@@ -338,14 +338,14 @@ export default function Home() {
   return (
     <main ref={pageRef} className="site-shell" id="home">
       <header className="site-header">
-        <CortexLogo />
+        <CortexLogo useImage />
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item, index) => (
             <a
               key={item}
               className={index === 0 ? "active" : undefined}
-              href={index === 0 ? "#home" : `#${item.toLowerCase().replace(" ", "-")}`}
+              href={item === "Home" ? "#home" : item === "Services" ? "/services" : `#${item.toLowerCase().replace(" ", "-")}`}
             >
               {item}
             </a>
@@ -411,7 +411,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="understanding" id="services" aria-labelledby="understanding-title">
+      <section className="understanding" aria-labelledby="understanding-title">
         <div className="understanding-intro" data-scroll-reveal>
           <h2 id="understanding-title">
             AT CORTEX, WE PROVIDE TRUE
@@ -512,16 +512,24 @@ export default function Home() {
         </blockquote>
       </section>
 
-      <section className="core-services" aria-labelledby="core-services-title">
-        <h2 id="core-services-title" data-scroll-reveal>OUR CORE PRODUCTS &amp; SERVICES</h2>
+      <section className="core-services" id="services" aria-labelledby="core-services-title">
+        <div className="services-heading" data-scroll-reveal>
+          <h2 id="core-services-title">SERVICES BUILT FOR WHAT’S NEXT</h2>
+          <p>
+            We bring data, technology, media and venture thinking together to help
+            organisations find opportunities, build smarter and grow with confidence.
+          </p>
+        </div>
         <div className="core-services-grid">
           {coreServices.map((service) => (
             <article className="service-card" key={service.number} data-scroll-reveal>
               <div className="service-icon"><ServiceIcon number={service.number} /></div>
               <div className="service-copy">
-                <span className="service-number">{service.number}</span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                <a href={serviceLinks[Number(service.number) - 1].href} aria-label={`Explore ${service.title}`}>
+                  Explore service <span aria-hidden="true">→</span>
+                </a>
               </div>
             </article>
           ))}
@@ -548,7 +556,7 @@ export default function Home() {
             </div>
             <div>
               <a href="#case-study">Case Study</a>
-              <a href="#core-services-title">Products</a>
+              <a href="#services">Products</a>
               <a href="mailto:hello@cortexdata.id">Contact</a>
             </div>
           </nav>
