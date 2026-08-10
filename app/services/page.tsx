@@ -80,7 +80,7 @@ export default function ServicesPage() {
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/">Home</Link>
           <Link className="active" href="/services">Services</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/about">About</Link>
           <Link href="/#case-study">Case Study</Link>
           <Link href="/#blog">Blog</Link>
         </nav>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
         <Image
           className="services-card-hero-image"
           src={servicesHeroImage}
-          alt="Technology consultant seated with a laptop"
+          alt="Black African technology consultant seated with a laptop"
           priority
           sizes="100vw"
         />
@@ -112,7 +112,7 @@ export default function ServicesPage() {
             <p>Transform complex challenges with an integrated team of data, technology and media experts.</p>
             <a href="mailto:hello@cortexdata.id">Build with us</a>
           </div>
-          <Image src={dataTeamImage} alt="Data specialists collaborating" sizes="(max-width: 760px) 45vw, 240px" />
+          <Image src={dataTeamImage} alt="Black African data specialists collaborating" sizes="(max-width: 760px) 45vw, 240px" />
         </article>
         <article className="services-feature-card">
           <div className="services-feature-copy">
@@ -120,7 +120,7 @@ export default function ServicesPage() {
             <p>Validate new ideas, create intelligent products and turn opportunities into scalable ventures.</p>
             <a href="mailto:hello@cortexdata.id">Start an idea</a>
           </div>
-          <Image src={innovationTeamImage} alt="Innovator developing a new digital product" sizes="(max-width: 760px) 45vw, 240px" />
+          <Image src={innovationTeamImage} alt="Black African innovator developing a new digital product" sizes="(max-width: 760px) 45vw, 240px" />
         </article>
       </section>
 

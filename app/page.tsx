@@ -33,12 +33,12 @@ const understandingCards: Array<{
   {
     title: "Market",
     image: marketImage,
-    alt: "An Indonesian market filled with fresh vegetables and shoppers",
+    alt: "Black African women selecting produce at a vibrant open-air market",
   },
   {
     title: "People",
     image: peopleImage,
-    alt: "People walking across a graphic black-and-white crossing",
+    alt: "Black African pedestrians walking across a graphic black-and-white crossing",
   },
 ];
 
@@ -62,21 +62,21 @@ const values = [
     description:
       "We question every signal, explore every dataset and test assumptions to uncover patterns that turn complex information into clear, actionable insight.",
     image: valueCuriosityImage,
-    alt: "Data analysts exploring charts together on a laptop",
+    alt: "Black African data analysts exploring charts together on a laptop",
   },
   {
     title: "BOLD EXPERIMENTATION",
     description:
       "We combine predictive analytics, statistical modelling and responsible AI to discover smarter approaches, validate ideas and improve every decision.",
     image: valueInnovationImage,
-    alt: "Analytics leader surrounded by predictive data visualizations",
+    alt: "Black African analytics leader surrounded by predictive data visualizations",
   },
   {
     title: "CLIENT-FIRST INTELLIGENCE",
     description:
       "We design dashboards, forecasts and data strategies around real client goals—delivering measurable outcomes, not analytics for analytics' sake.",
     image: valueClientImage,
-    alt: "Data consultant presenting dashboard insights to clients",
+    alt: "Black African data consultant presenting dashboard insights to clients",
   },
 ];
 
@@ -345,7 +345,7 @@ export default function Home() {
             <a
               key={item}
               className={index === 0 ? "active" : undefined}
-              href={item === "Home" ? "#home" : item === "Services" ? "/services" : `#${item.toLowerCase().replace(" ", "-")}`}
+              href={item === "Home" ? "#home" : item === "Services" ? "/services" : item === "About" ? "/about" : `#${item.toLowerCase().replace(" ", "-")}`}
             >
               {item}
             </a>
@@ -472,7 +472,7 @@ export default function Home() {
           <Image
             className="quality-image"
             src={qualityAssuranceImage}
-            alt="Analytics and quality engineering team celebrating a validated data release"
+            alt="Black African analytics and quality engineering team celebrating a validated data release"
             sizes="(max-width: 760px) 94vw, 88vw"
           />
           <div className="quality-overlay" />
@@ -552,7 +552,7 @@ export default function Home() {
             <div>
               <a href="#home">Home</a>
               <a href="#services">Services</a>
-              <a href="#about">About</a>
+              <a href="/about">About</a>
             </div>
             <div>
               <a href="#case-study">Case Study</a>
