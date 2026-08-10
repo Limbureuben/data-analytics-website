@@ -2,6 +2,20 @@
 
 import { useEffect, useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
+import amrefLogo from "../public/images/logo/amref.D_gciFgG_Z2lzEDA.webp";
+import cocaColaLogo from "../public/images/logo/coca-cola.CfzaD0v2_Z1Qy61w.webp";
+import codeForAfricaLogo from "../public/images/logo/code-for-africa.CJsdx67A_Z1Xqcp0.webp";
+import gatesLogo from "../public/images/logo/gates.QI4kBQ6m_yUIuA.webp";
+import girlEffectLogo from "../public/images/logo/girl-effect.DkP8gJTw_1I4USr.webp";
+import googleLogo from "../public/images/logo/google.C_u1S10g_1yPGEK.webp";
+import hatchingHopeLogo from "../public/images/logo/hatching-hope.D4t6hUJb_2f7gIM.webp";
+import hdifLogo from "../public/images/logo/hdif.BY1JffnW_Z1F6m6r.webp";
+import ilriLogo from "../public/images/logo/ilri.BbaZdSwj_Z1rB9i9.webp";
+import twawezaLogo from "../public/images/logo/twaweza.DM6YyWFn_2mRe9c.webp";
+import undpLogo from "../public/images/logo/undp.-hKkppJN_16WllA.webp";
+import usaidLogo from "../public/images/logo/usaid.Coh413GZ_q0Lge.webp";
+import venture37Logo from "../public/images/logo/venture37.DBRp6bAj_1X4vqr.webp";
+import vodacomLogo from "../public/images/logo/vodacom.DDqwzXYW_Z3DoeG.webp";
 import marketImage from "../public/images/market.png";
 import peopleImage from "../public/images/people.png";
 import qualityAssuranceImage from "../public/images/quality-assurance-team.png";
@@ -43,17 +57,20 @@ const understandingCards: Array<{
 ];
 
 const partners = [
-  { short: "ESDM", name: "Energy & Resources", tone: "gold" },
-  { short: "KOMDIGI", name: "Digital Indonesia", tone: "digital" },
-  { short: "KEMNAKER", name: "Ministry of Manpower", tone: "navy" },
-  { short: "BNPB", name: "Disaster Management", tone: "orange" },
-  { short: "TASIK", name: "Tasikmalaya", tone: "crest" },
-  { short: "PLN", name: "Electricity", tone: "electric" },
-  { short: "JASA", name: "Kospin Syariah", tone: "green" },
-  { short: "TJ", name: "Transjakarta", tone: "transit" },
-  { short: "MERCY", name: "Mercy Corps", tone: "red" },
-  { short: "M", name: "Morris", tone: "cyan" },
-  { short: "base", name: "Base", tone: "coral" },
+  { name: "AMREF Health Africa", image: amrefLogo },
+  { name: "Coca-Cola", image: cocaColaLogo },
+  { name: "Code for Africa", image: codeForAfricaLogo },
+  { name: "Gates Foundation", image: gatesLogo },
+  { name: "Girl Effect", image: girlEffectLogo },
+  { name: "Google", image: googleLogo },
+  { name: "Hatching Hope Foundation", image: hatchingHopeLogo },
+  { name: "Human Development Innovation Fund", image: hdifLogo },
+  { name: "International Livestock Research Institute", image: ilriLogo },
+  { name: "Twaweza", image: twawezaLogo },
+  { name: "United Nations Development Programme", image: undpLogo },
+  { name: "USAID", image: usaidLogo },
+  { name: "Land O'Lakes Venture37", image: venture37Logo },
+  { name: "Vodacom", image: vodacomLogo },
 ];
 
 const values = [
@@ -396,15 +413,16 @@ export default function Home() {
           <div className="partner-track">
             {[...partners, ...partners].map((partner, index) => (
               <div
-                className={`partner-logo partner-${partner.tone}`}
-                key={`${partner.short}-${index}`}
+                className="partner-logo"
+                key={`${partner.name}-${index}`}
                 aria-hidden={index >= partners.length}
               >
-                <span className="partner-symbol">{partner.short.slice(0, 2)}</span>
-                <span className="partner-wordmark">
-                  <strong>{partner.short}</strong>
-                  <small>{partner.name}</small>
-                </span>
+                <Image
+                  className="partner-logo-image"
+                  src={partner.image}
+                  alt={index < partners.length ? partner.name : ""}
+                  sizes="196px"
+                />
               </div>
             ))}
           </div>
