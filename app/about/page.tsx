@@ -70,7 +70,7 @@ export default function AboutPage() {
           <Link className="active" href="/about" aria-current="page">
             About
           </Link>
-          <Link href="/#case-study">Case Study</Link>
+          <Link href="/case-study">Case Study</Link>
           <Link href="/#blog">Blog</Link>
         </nav>
         <a className="header-cta" href="mailto:hello@cortexdata.id">
@@ -81,9 +81,9 @@ export default function AboutPage() {
       <section className="about-hero" aria-labelledby="about-title">
         <div className="about-hero-copy">
           <h1 id="about-title">
-            Intelligence built for
-            <br />
-            decisions that matter.
+            <span>Intelligence built for</span>
+            <span>decisions that</span>
+            <span>matter.</span>
           </h1>
           <p>
             We are a social intelligence analytics company helping organisations
@@ -116,8 +116,8 @@ export default function AboutPage() {
         </div>
         <div className="about-story-copy">
           <h2 id="story-title">
-            Better decisions begin with a deeper understanding of the world behind
-            the data.
+            <span>Better decisions begin with a deeper</span>
+            <span>understanding of the world behind the data.</span>
           </h2>
           <div className="about-story-columns">
             <p>
@@ -158,8 +158,10 @@ export default function AboutPage() {
           />
         </div>
         <div className="about-purpose-copy">
-          <span className="about-eyebrow">OUR PURPOSE</span>
-          <h2 id="purpose-title">Make intelligence clearer, more useful and more human.</h2>
+          <h2 id="purpose-title">
+            <span>Make intelligence clearer,</span>
+            <span>more useful and more human.</span>
+          </h2>
           <p>
             Technology can reveal patterns at extraordinary speed. Human context makes
             those patterns meaningful. We combine both so organisations can act with
@@ -184,7 +186,6 @@ export default function AboutPage() {
 
       <section className="about-principles" aria-labelledby="principles-title">
         <div className="about-principles-heading">
-          <span className="about-eyebrow">HOW WE WORK</span>
           <h2 id="principles-title">Principles that guide every engagement.</h2>
         </div>
         <div className="about-principles-grid">
@@ -200,8 +201,11 @@ export default function AboutPage() {
 
       <section className="about-team" aria-labelledby="team-title">
         <div className="about-team-copy">
-          <span className="about-eyebrow">ONE CONNECTED TEAM</span>
-          <h2 id="team-title">Different disciplines. One shared standard.</h2>
+          <h2 id="team-title">
+            <span>Different disciplines.</span>
+            <span>One shared</span>
+            <span>standard.</span>
+          </h2>
           <p>
             Researchers, data engineers, analysts, strategists and product thinkers
             work side by side. That combination helps us examine a challenge from every
@@ -219,7 +223,6 @@ export default function AboutPage() {
       </section>
 
       <section className="about-cta" aria-labelledby="about-cta-title">
-        <span className="about-eyebrow">LET&apos;S WORK TOGETHER</span>
         <h2 id="about-cta-title">Bring us the decision you need to make.</h2>
         <p>We will help you find the evidence, structure the question and build a clear way forward.</p>
         <a href="mailto:hello@cortexdata.id">Start a conversation <span aria-hidden="true">→</span></a>
@@ -228,12 +231,9 @@ export default function AboutPage() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-company">
-            <Logo />
+            <Logo image />
             <address>
-              Graha Surveyor Indonesia, Floor 15, Unit 1503,<br />
-              Jl. Jenderal Gatot Subroto, Kav. 56,<br />
-              Kuningan Timur, Setiabudi,<br />
-              South Jakarta, Jakarta 12950
+              Dar es Salaam, Tanzania
             </address>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
@@ -243,28 +243,24 @@ export default function AboutPage() {
               <Link href="/about">About</Link>
             </div>
             <div>
-              <Link href="/#case-study">Case Study</Link>
+              <Link href="/case-study">Case Study</Link>
               <Link href="/services">Products</Link>
-              <a href="mailto:hello@cortexdata.id">Contact</a>
+              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
             </div>
           </nav>
           <div className="footer-contact">
-            <a href="mailto:hello@cortexdata.id">
+            <a href="mailto:hello@digitaltownsquare.co.tz">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
-              <span>hello@cortexdata.id</span>
+              <span>hello@digitaltownsquare.co.tz</span>
             </a>
-            <a href="mailto:insights@cortexdata.id">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
-              <span>insights@cortexdata.id</span>
+            <a href="tel:+255744111221">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 5-2 1.5a15 15 0 0 0 5 5L16 12.5l5 1.5v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4Z" /></svg>
+              <span>+255 744 111 221</span>
             </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>
-              <span>@cortex.data</span>
-            </a>
-            <a href="https://x.com/" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h5l11 18h-5ZM20 3 4 21" /></svg>
-              <span>@cortexdataid</span>
-            </a>
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <span>Dar es Salaam, Tanzania</span>
+            </span>
           </div>
         </div>
         <div className="footer-bottom">

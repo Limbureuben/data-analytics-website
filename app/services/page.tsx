@@ -81,7 +81,7 @@ export default function ServicesPage() {
           <Link href="/">Home</Link>
           <Link className="active" href="/services">Services</Link>
           <Link href="/about">About</Link>
-          <Link href="/#case-study">Case Study</Link>
+          <Link href="/case-study">Case Study</Link>
           <Link href="/#blog">Blog</Link>
         </nav>
         <a className="header-cta" href="mailto:hello@cortexdata.id">Contact Us</a>
@@ -141,7 +141,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <footer className="services-page-footer"><Logo /><span>© 2026 Cortex Data Indonesia</span><Link href="/">Back to home</Link></footer>
+      <footer className="services-page-footer">
+        <Logo useImage />
+        <div className="services-footer-details">
+          <a href="mailto:hello@digitaltownsquare.co.tz">hello@digitaltownsquare.co.tz</a>
+          <a href="tel:+255744111221">+255 744 111 221</a>
+          <span>Dar es Salaam, Tanzania</span>
+        </div>
+      </footer>
     </main>
   );
 }

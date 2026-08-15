@@ -107,7 +107,7 @@ const capabilities = [
         verification and insight delivery across audience, market and behavioural research.
       </>
     ),
-    detail: "Full-time research scientists, data auditors and field operations specialists.",
+    detail: null,
   },
   {
     icon: "engineering",
@@ -118,7 +118,7 @@ const capabilities = [
         automate quality checks and accelerate analytics delivery at scale.
       </>
     ),
-    detail: "Full-time data engineers, analytics engineers and business intelligence experts.",
+    detail: null,
   },
   {
     icon: "client",
@@ -129,7 +129,7 @@ const capabilities = [
         operational data into clear recommendations tied to client objectives.
       </>
     ),
-    detail: "Dedicated expertise in research, data science, forecasting and decision intelligence.",
+    detail: null,
   },
 ];
 
@@ -362,7 +362,7 @@ export default function Home() {
             <a
               key={item}
               className={index === 0 ? "active" : undefined}
-              href={item === "Home" ? "#home" : item === "Services" ? "/services" : item === "About" ? "/about" : `#${item.toLowerCase().replace(" ", "-")}`}
+              href={item === "Home" ? "#home" : item === "Services" ? "/services" : item === "About" ? "/about" : item === "Case Study" ? "/case-study" : `#${item.toLowerCase().replace(" ", "-")}`}
             >
               {item}
             </a>
@@ -399,7 +399,7 @@ export default function Home() {
               <a className="button button-primary" href="mailto:hello@cortexdata.id">
                 Contact Us
               </a>
-              <a className="button button-secondary" href="#case-study">
+              <a className="button button-secondary" href="/case-study">
                 Check Our Work
               </a>
             </div>
@@ -514,7 +514,7 @@ export default function Home() {
               </div>
               <h3>{capability.title}</h3>
               <p>{capability.description}</p>
-              <p>{capability.detail}</p>
+              {capability.detail && <p>{capability.detail}</p>}
             </article>
           ))}
         </div>
@@ -523,7 +523,7 @@ export default function Home() {
           <span aria-hidden="true">“</span>
           <p>
             Through specialised data analytics services, our teams deliver accurate,
-            relevant intelligence that helps you make smarter decisions—faster and more
+            relevant intelligence that helps you make smarter decisions faster and more
             consistently across markets.
           </p>
           <span aria-hidden="true">”</span>
@@ -557,12 +557,9 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-inner" data-scroll-reveal>
           <div className="footer-company">
-            <CortexLogo />
+            <CortexLogo useImage />
             <address>
-              Graha Surveyor Indonesia, Floor 15, Unit 1503,<br />
-              Jl. Jenderal Gatot Subroto, Kav. 56,<br />
-              Kuningan Timur, Setiabudi,<br />
-              South Jakarta, Jakarta 12950
+              Dar es Salaam, Tanzania
             </address>
           </div>
 
@@ -573,29 +570,25 @@ export default function Home() {
               <a href="/about">About</a>
             </div>
             <div>
-              <a href="#case-study">Case Study</a>
+              <a href="/case-study">Case Study</a>
               <a href="#services">Products</a>
-              <a href="mailto:hello@cortexdata.id">Contact</a>
+              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
             </div>
           </nav>
 
           <div className="footer-contact">
-            <a href="mailto:hello@cortexdata.id">
+            <a href="mailto:hello@digitaltownsquare.co.tz">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
-              <span>hello@cortexdata.id</span>
+              <span>hello@digitaltownsquare.co.tz</span>
             </a>
-            <a href="mailto:insights@cortexdata.id">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
-              <span>insights@cortexdata.id</span>
+            <a href="tel:+255744111221">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 5-2 1.5a15 15 0 0 0 5 5L16 12.5l5 1.5v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4Z" /></svg>
+              <span>+255 744 111 221</span>
             </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" /></svg>
-              <span>@cortex.data</span>
-            </a>
-            <a href="https://x.com/" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h5l11 18h-5ZM20 3 4 21" /></svg>
-              <span>@cortexdataid</span>
-            </a>
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <span>Dar es Salaam, Tanzania</span>
+            </span>
           </div>
         </div>
         <div className="footer-bottom">
