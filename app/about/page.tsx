@@ -6,7 +6,7 @@ import analystsImage from "../../public/images/value-curiosity.png";
 import leaderImage from "../../public/images/value-innovation.png";
 
 export const metadata: Metadata = {
-  title: "About Us | Cortex Data Indonesia",
+  title: "About Us | digitalocean",
   description:
     "Meet Cortex Data Indonesia, a social intelligence analytics company turning complex signals into trusted, decision-ready insight.",
 };
@@ -110,10 +110,6 @@ export default function AboutPage() {
       </section>
 
       <section className="about-story" id="our-story" aria-labelledby="story-title">
-        <div className="about-section-label">
-          <span>01</span>
-          <p>Our story</p>
-        </div>
         <div className="about-story-copy">
           <h2 id="story-title">
             <span>Better decisions begin with a deeper</span>

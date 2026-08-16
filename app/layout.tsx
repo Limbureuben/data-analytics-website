@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Cortex Data Indonesia",
+  title: "digitalocean",
   description: "Social intelligence and data analytics for smarter decisions.",
 };
 

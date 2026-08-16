@@ -4,9 +4,10 @@ import Link from "next/link";
 import servicesHeroImage from "../../public/images/girl3.png";
 import dataTeamImage from "../../public/images/value-curiosity.png";
 import innovationTeamImage from "../../public/images/value-innovation.png";
+import partnershipImage from "../../public/images/quality-assurance-team.png";
 
 export const metadata: Metadata = {
-  title: "Services | Cortex Data Indonesia",
+  title: "Services | digitalocean",
   description: "Explore Cortex Data Indonesia's data, AI, media and venture services.",
 };
 
@@ -96,7 +97,6 @@ export default function ServicesPage() {
           sizes="100vw"
         />
         <div className="services-card-hero-copy">
-          <span>CONNECTED EXPERTISE</span>
           <h1>Great ideas.<br />Real opportunity.</h1>
           <p>Data, technology, media and venture expertise working together to create measurable progress.</p>
           <a href="#services-grid">Explore services <span aria-hidden="true">→</span></a>
@@ -141,12 +141,79 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <footer className="services-page-footer">
-        <Logo useImage />
-        <div className="services-footer-details">
-          <a href="mailto:hello@digitaltownsquare.co.tz">hello@digitaltownsquare.co.tz</a>
-          <a href="tel:+255744111221">+255 744 111 221</a>
-          <span>Dar es Salaam, Tanzania</span>
+      <section className="services-partnership" aria-labelledby="services-partnership-title">
+        <div className="services-partnership-inner">
+          <div className="services-partnership-copy">
+            <h2 id="services-partnership-title">Good work happens <em>together.</em></h2>
+            <p>We work alongside your people, bring the right specialists into the room and keep every decision focused on meaningful progress.</p>
+          </div>
+          <div className="services-partnership-image">
+            <Image
+              src={partnershipImage}
+              alt="A collaborative technology team celebrating progress together"
+              sizes="(max-width: 760px) calc(100vw - 48px), 34vw"
+            />
+            <div className="services-partnership-stamp"><strong>ONE TEAM</strong><span>Shared momentum</span></div>
+          </div>
+          <ol className="services-partnership-principles">
+            <li><span>01</span><strong>Senior attention</strong><p>Experienced people stay close to the work from start to finish.</p></li>
+            <li><span>02</span><strong>Built together</strong><p>Your team is part of the process, building confidence and lasting capability.</p></li>
+            <li><span>03</span><strong>Visible progress</strong><p>Clear priorities, open communication and outcomes that can be measured.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="services-next-step" aria-labelledby="services-next-step-title">
+        <div className="services-next-step-inner">
+          <h2 id="services-next-step-title"><span>Bring us the</span><span>hard question.</span></h2>
+          <div className="services-next-step-copy">
+            <p>Whether you are starting with an ambitious idea or a challenge that needs a fresh perspective, we are ready to explore what comes next.</p>
+            <div>
+              <a href="mailto:hello@digitaltownsquare.co.tz">Start a conversation <span aria-hidden="true">↗</span></a>
+              <Link href="/case-study">View our work</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-company">
+            <Logo useImage />
+            <address>Dar es Salaam, Tanzania</address>
+          </div>
+
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <div>
+              <Link href="/">Home</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/about">About</Link>
+            </div>
+            <div>
+              <Link href="/case-study">Case Study</Link>
+              <Link href="/#blog">Blog</Link>
+              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
+            </div>
+          </nav>
+
+          <div className="footer-contact">
+            <a href="mailto:hello@digitaltownsquare.co.tz">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
+              <span>hello@digitaltownsquare.co.tz</span>
+            </a>
+            <a href="tel:+255744111221">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 5-2 1.5a15 15 0 0 0 5 5L16 12.5l5 1.5v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4Z" /></svg>
+              <span>+255 744 111 221</span>
+            </a>
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <span>Dar es Salaam, Tanzania</span>
+            </span>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2026 Cortex Data Indonesia</span>
+          <span>Data intelligence for better decisions.</span>
         </div>
       </footer>
     </main>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Cortex Data Indonesia",
+  title: "Case Studies | digitalocean",
   description:
     "Explore how Cortex turns research, data and technology into measurable impact across East Africa.",
 };
@@ -21,9 +21,9 @@ const projects = [
     impact:
       "Reach targets were exceeded. Listeners placed advance orders for SASSO chicks—a trackable purchase behaviour, not a proxy metric.",
     metrics: [
-      ["930,000+", "People reached"],
-      ["50,000+", "Farmers engaged directly"],
-      ["5K–10K", "Advance chick orders"],
+      ["45000+", "People reached"],
+      ["5000+", "Farmers engaged directly"],
+      ["5K+", "Advance chick orders"],
       ["600+", "Calls & SMS interactions"],
     ],
     logos: [
@@ -45,7 +45,6 @@ const projects = [
       "Reached 3,961,823 young Kenyans with counter-narratives and civic content during the election period.",
     metrics: [
       ["3.9M", "Young Kenyans reached"],
-      ["Real-time", "Misinformation tracking"],
     ],
     logos: [
       ["/images/logo/undp.-hKkppJN_16WllA.webp", "United Nations Development Programme"],
@@ -111,12 +110,12 @@ const projects = [
   },
 ] as const;
 
-function Logo() {
+function Logo({ footer = false }: { footer?: boolean }) {
   return (
     <Link className="brand" href="/" aria-label="Cortex Data Indonesia home">
       <Image
         className="brand-logo-image"
-        src="/images/logo3.png"
+        src={footer ? "/images/logo2.png" : "/images/logo3.png"}
         alt=""
         width={112}
         height={45}
@@ -162,18 +161,9 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
-      <nav className="case-study-jump" aria-label="Jump to a project">
-        {projects.map((project) => (
-          <a key={project.id} href={`#${project.id}`}>
-            <span>{project.number}</span>{project.title}
-          </a>
-        ))}
-      </nav>
-
       <section className={`case-feature case-tone-${featured.tone}`} id={featured.id} aria-labelledby={`${featured.id}-title`}>
         <div className="case-feature-heading">
           <div>
-            <span>{featured.category}</span>
             <h2 id={`${featured.id}-title`}>{featured.title}</h2>
           </div>
           <div className="case-client-logos" aria-label="Project partners">
@@ -183,27 +173,26 @@ export default function CaseStudyPage() {
           </div>
         </div>
         <div className="case-narrative">
-          <article><span>01 / Problem</span><p>{featured.problem}</p></article>
-          <article><span>02 / Solution</span><p>{featured.solution}</p></article>
-          <article><span>03 / Impact</span><p>{featured.impact}</p></article>
+          <article><span>Problem</span><p>{featured.problem}</p></article>
+          <article><span>Solution</span><p>{featured.solution}</p></article>
+          <article><span>Impact</span><p>{featured.impact}</p></article>
         </div>
+      </section>
+
+      <div className={`case-feature-metrics case-tone-${featured.tone}`} aria-label={`${featured.title} results`}>
         <div className="case-metrics">
           {featured.metrics.map(([value, label]) => (
             <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
-      </section>
+      </div>
 
-      <section className="case-study-collection" aria-labelledby="more-work-title">
-        <div className="case-study-collection-heading">
-          <h2 id="more-work-title">Different challenges.<br />The same focus on outcomes.</h2>
-        </div>
+      <section className="case-study-collection" aria-label="More case studies">
         <div className="case-study-stack">
           {remaining.map((project) => (
             <article className={`case-study-card case-tone-${project.tone}`} id={project.id} key={project.id} aria-labelledby={`${project.id}-title`}>
-              <div className="case-study-card-topline">
-                <span>{project.number}</span>
-                <p>{project.category}</p>
+              <div className="case-study-card-topline case-study-card-topline-title">
+                <h3 id={`${project.id}-title`}>{project.title}</h3>
                 {project.logos.length > 0 && (
                   <div className="case-client-logos">
                     {project.logos.map(([src, alt]) => (
@@ -212,14 +201,13 @@ export default function CaseStudyPage() {
                   </div>
                 )}
               </div>
-              <h3 id={`${project.id}-title`}>{project.title}</h3>
               <div className="case-card-body">
                 <div className="case-card-narrative">
                   <div><strong>Problem</strong><p>{project.problem}</p></div>
                   <div><strong>Solution</strong><p>{project.solution}</p></div>
                   <div><strong>Impact</strong><p>{project.impact}</p></div>
                 </div>
-                <div className="case-card-metrics">
+                <div className={`case-card-metrics${project.metrics.length === 1 ? " case-card-metrics-single" : ""}`}>
                   {project.metrics.map(([value, label]) => (
                     <div key={label}><strong>{value}</strong><span>{label}</span></div>
                   ))}
@@ -231,18 +219,49 @@ export default function CaseStudyPage() {
       </section>
 
       <section className="case-study-cta" aria-labelledby="case-cta-title">
-        <span>YOUR CHALLENGE, NEXT</span>
         <h2 id="case-cta-title">Let&apos;s create impact we can measure.</h2>
         <p>Bring us the outcome you need. We will connect the research, technology and delivery required to move it forward.</p>
         <a href="mailto:hello@digitaltownsquare.co.tz">Start a conversation <span aria-hidden="true">→</span></a>
       </section>
 
-      <footer className="services-page-footer">
-        <Logo />
-        <div className="services-footer-details">
-          <a href="mailto:hello@digitaltownsquare.co.tz">hello@digitaltownsquare.co.tz</a>
-          <a href="tel:+255744111221">+255 744 111 221</a>
-          <span>Dar es Salaam, Tanzania</span>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-company">
+            <Logo footer />
+            <address>Dar es Salaam, Tanzania</address>
+          </div>
+
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <div>
+              <Link href="/">Home</Link>
+              <Link href="/services">Services</Link>
+              <Link href="/about">About</Link>
+            </div>
+            <div>
+              <Link href="/case-study">Case Study</Link>
+              <Link href="/#blog">Blog</Link>
+              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
+            </div>
+          </nav>
+
+          <div className="footer-contact">
+            <a href="mailto:hello@digitaltownsquare.co.tz">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
+              <span>hello@digitaltownsquare.co.tz</span>
+            </a>
+            <a href="tel:+255744111221">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 5-2 1.5a15 15 0 0 0 5 5L16 12.5l5 1.5v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4Z" /></svg>
+              <span>+255 744 111 221</span>
+            </a>
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <span>Dar es Salaam, Tanzania</span>
+            </span>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2026 Cortex Data Indonesia</span>
+          <span>Data intelligence for better decisions.</span>
         </div>
       </footer>
     </main>
