@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
+import MobileNav from "./components/MobileNav";
 import amrefLogo from "../public/images/logo/amref.D_gciFgG_Z2lzEDA.webp";
 import cocaColaLogo from "../public/images/logo/coca-cola.CfzaD0v2_Z1Qy61w.webp";
 import codeForAfricaLogo from "../public/images/logo/code-for-africa.CJsdx67A_Z1Xqcp0.webp";
@@ -16,10 +17,10 @@ import undpLogo from "../public/images/logo/undp.-hKkppJN_16WllA.webp";
 import usaidLogo from "../public/images/logo/usaid.Coh413GZ_q0Lge.webp";
 import venture37Logo from "../public/images/logo/venture37.DBRp6bAj_1X4vqr.webp";
 import vodacomLogo from "../public/images/logo/vodacom.DDqwzXYW_Z3DoeG.webp";
-import marketImage from "../public/images/market.png";
+import marketImage from "../public/images/market-card.png";
 import peopleImage from "../public/images/people.png";
 import qualityAssuranceImage from "../public/images/quality-assurance-team.png";
-import societyImage from "../public/images/society.png";
+import societyImage from "../public/images/society-posta.png";
 import valueClientImage from "../public/images/value-client-first.png";
 import valueCuriosityImage from "../public/images/value-curiosity.png";
 import valueInnovationImage from "../public/images/value-innovation.png";
@@ -369,9 +370,10 @@ export default function Home() {
           ))}
         </nav>
 
-        <a className="header-cta" href="mailto:hello@cortexdata.id">
+        <a className="header-cta" href="/contact">
           Contact Us
         </a>
+        <MobileNav />
       </header>
 
       <section ref={heroScrollRef} className="hero-scroll" aria-label="Scroll-controlled introduction">
@@ -396,7 +398,7 @@ export default function Home() {
               ANALYTICS COMPANY
             </h1>
             <div className="hero-actions">
-              <a className="button button-primary" href="mailto:hello@cortexdata.id">
+              <a className="button button-primary" href="/contact">
                 Contact Us
               </a>
               <a className="button button-secondary" href="/case-study">
@@ -499,7 +501,7 @@ export default function Home() {
               <span>INCORPORATING THE LATEST DATA TECHNOLOGIES</span>
               <span>FOR ANALYTICS QUALITY ASSURANCE</span>
             </h3>
-            <a href="mailto:hello@cortexdata.id">Contact Us</a>
+            <a href="/contact">Contact Us</a>
           </div>
         </div>
       </section>
@@ -572,7 +574,7 @@ export default function Home() {
             <div>
               <a href="/case-study">Case Study</a>
               <a href="#services">Products</a>
-              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
+              <a href="/contact">Contact</a>
             </div>
           </nav>
 

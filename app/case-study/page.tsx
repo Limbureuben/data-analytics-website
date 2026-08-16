@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../components/MobileNav";
+import CaseStudyMotion from "./CaseStudyMotion";
 
 export const metadata: Metadata = {
   title: "Case Studies | digitalocean",
@@ -131,6 +133,7 @@ export default function CaseStudyPage() {
 
   return (
     <main className="case-study-page">
+      <CaseStudyMotion />
       <header className="site-header">
         <Logo />
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -140,11 +143,12 @@ export default function CaseStudyPage() {
           <Link className="active" href="/case-study" aria-current="page">Case Study</Link>
           <Link href="/#blog">Blog</Link>
         </nav>
-        <a className="header-cta" href="mailto:hello@digitaltownsquare.co.tz">Contact Us</a>
+        <Link className="header-cta" href="/contact">Contact Us</Link>
+        <MobileNav />
       </header>
 
       <section className="case-study-hero" aria-labelledby="case-study-title">
-        <div className="case-study-hero-copy">
+        <div className="case-study-hero-copy" data-case-reveal="left">
           <h1 id="case-study-title">
             <span>Projects that</span>
             <span>moved the needle.</span>
@@ -154,14 +158,14 @@ export default function CaseStudyPage() {
             we have created impact.
           </p>
         </div>
-        <div className="case-study-hero-proof" aria-label="Portfolio highlights">
+        <div className="case-study-hero-proof" aria-label="Portfolio highlights" data-case-reveal="right">
           <div><strong>5</strong><span>Case studies</span></div>
           <div><strong>2</strong><span>East African countries</span></div>
           <div><strong>3.9M+</strong><span>Young Kenyans reached</span></div>
         </div>
       </section>
 
-      <section className={`case-feature case-tone-${featured.tone}`} id={featured.id} aria-labelledby={`${featured.id}-title`}>
+      <section className={`case-feature case-tone-${featured.tone}`} id={featured.id} aria-labelledby={`${featured.id}-title`} data-case-reveal="scale">
         <div className="case-feature-heading">
           <div>
             <h2 id={`${featured.id}-title`}>{featured.title}</h2>
@@ -173,16 +177,16 @@ export default function CaseStudyPage() {
           </div>
         </div>
         <div className="case-narrative">
-          <article><span>Problem</span><p>{featured.problem}</p></article>
-          <article><span>Solution</span><p>{featured.solution}</p></article>
-          <article><span>Impact</span><p>{featured.impact}</p></article>
+          <article data-case-detail><span>Problem</span><p>{featured.problem}</p></article>
+          <article data-case-detail><span>Solution</span><p>{featured.solution}</p></article>
+          <article data-case-detail><span>Impact</span><p>{featured.impact}</p></article>
         </div>
       </section>
 
-      <div className={`case-feature-metrics case-tone-${featured.tone}`} aria-label={`${featured.title} results`}>
+      <div className={`case-feature-metrics case-tone-${featured.tone}`} aria-label={`${featured.title} results`} data-case-reveal="up">
         <div className="case-metrics">
           {featured.metrics.map(([value, label]) => (
-            <div key={label}><strong>{value}</strong><span>{label}</span></div>
+            <div key={label}><strong data-case-count={value}>{value}</strong><span>{label}</span></div>
           ))}
         </div>
       </div>
@@ -190,7 +194,7 @@ export default function CaseStudyPage() {
       <section className="case-study-collection" aria-label="More case studies">
         <div className="case-study-stack">
           {remaining.map((project) => (
-            <article className={`case-study-card case-tone-${project.tone}`} id={project.id} key={project.id} aria-labelledby={`${project.id}-title`}>
+            <article className={`case-study-card case-tone-${project.tone}`} id={project.id} key={project.id} aria-labelledby={`${project.id}-title`} data-case-reveal="card" data-case-tilt>
               <div className="case-study-card-topline case-study-card-topline-title">
                 <h3 id={`${project.id}-title`}>{project.title}</h3>
                 {project.logos.length > 0 && (
@@ -218,14 +222,14 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
-      <section className="case-study-cta" aria-labelledby="case-cta-title">
+      <section className="case-study-cta" aria-labelledby="case-cta-title" data-case-reveal="fade">
         <h2 id="case-cta-title">Let&apos;s create impact we can measure.</h2>
         <p>Bring us the outcome you need. We will connect the research, technology and delivery required to move it forward.</p>
         <a href="mailto:hello@digitaltownsquare.co.tz">Start a conversation <span aria-hidden="true">→</span></a>
       </section>
 
       <footer className="site-footer">
-        <div className="footer-inner">
+        <div className="footer-inner" data-case-reveal="up">
           <div className="footer-company">
             <Logo footer />
             <address>Dar es Salaam, Tanzania</address>
@@ -240,7 +244,7 @@ export default function CaseStudyPage() {
             <div>
               <Link href="/case-study">Case Study</Link>
               <Link href="/#blog">Blog</Link>
-              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
+              <Link href="/contact">Contact</Link>
             </div>
           </nav>
 

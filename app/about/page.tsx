@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../components/MobileNav";
 import teamImage from "../../public/images/quality-assurance-team.png";
 import analystsImage from "../../public/images/value-curiosity.png";
 import leaderImage from "../../public/images/value-innovation.png";
@@ -73,9 +74,10 @@ export default function AboutPage() {
           <Link href="/case-study">Case Study</Link>
           <Link href="/#blog">Blog</Link>
         </nav>
-        <a className="header-cta" href="mailto:hello@cortexdata.id">
+        <Link className="header-cta" href="/contact">
           Contact Us
-        </a>
+        </Link>
+        <MobileNav />
       </header>
 
       <section className="about-hero" aria-labelledby="about-title">
@@ -241,7 +243,7 @@ export default function AboutPage() {
             <div>
               <Link href="/case-study">Case Study</Link>
               <Link href="/services">Products</Link>
-              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
+              <Link href="/contact">Contact</Link>
             </div>
           </nav>
           <div className="footer-contact">

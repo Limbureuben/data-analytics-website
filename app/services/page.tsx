@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNav from "../components/MobileNav";
 import servicesHeroImage from "../../public/images/girl3.png";
 import dataTeamImage from "../../public/images/value-curiosity.png";
 import innovationTeamImage from "../../public/images/value-innovation.png";
@@ -85,7 +86,8 @@ export default function ServicesPage() {
           <Link href="/case-study">Case Study</Link>
           <Link href="/#blog">Blog</Link>
         </nav>
-        <a className="header-cta" href="mailto:hello@cortexdata.id">Contact Us</a>
+        <Link className="header-cta" href="/contact">Contact Us</Link>
+        <MobileNav />
       </header>
 
       <section className="services-card-hero">
@@ -192,7 +194,7 @@ export default function ServicesPage() {
             <div>
               <Link href="/case-study">Case Study</Link>
               <Link href="/#blog">Blog</Link>
-              <a href="mailto:hello@digitaltownsquare.co.tz">Contact</a>
+              <Link href="/contact">Contact</Link>
             </div>
           </nav>
 
