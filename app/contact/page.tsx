@@ -40,48 +40,74 @@ export default function ContactPage() {
       </header>
 
       <section className="contact-hero" aria-labelledby="contact-title">
+        <Image
+          className="contact-hero-image"
+          src="/images/contact-dar-skyline.png"
+          alt="Dar es Salaam skyline viewed from the waterfront"
+          fill
+          sizes="100vw"
+          priority
+        />
+        <div className="contact-hero-overlay" aria-hidden="true" />
         <div className="contact-hero-inner">
-          <div className="contact-hero-copy">
-            <h1 id="contact-title"><span>Start a</span><span>conversation.</span></h1>
-            <p>Tell us what you are building, researching, or trying to solve. We will help you identify the right next step.</p>
-          </div>
-          <div className="contact-hero-mark" aria-hidden="true">
-            <span>Let&apos;s</span>
-            <strong>talk.</strong>
-          </div>
+          <p className="contact-hero-kicker">Start a conversation</p>
+          <h1 id="contact-title">Contact us</h1>
+          <span className="contact-hero-rule" aria-hidden="true"><i /><i /><i /><i /><i /></span>
+          <p>Tell us what you are building, researching, or trying to solve. We will help you identify the right next step.</p>
         </div>
       </section>
 
       <section className="contact-details" aria-label="Contact details">
-        <div className="contact-details-intro">
-          <h2>Reach us directly.</h2>
-          <p>Choose the channel that works best for you. We will make sure your message reaches the right person.</p>
+        <div className="contact-details-heading">
+          <span>Reach us directly</span>
+          <h2>Choose the channel that works for you.</h2>
         </div>
-        <dl>
-          <div>
-            <dt>Email</dt>
-            <dd><a href="mailto:hello@digitaltownsquare.co.tz">hello@digitaltownsquare.co.tz <span aria-hidden="true">↗</span></a></dd>
-          </div>
-          <div>
-            <dt>Phone</dt>
-            <dd><a href="tel:+255744111221">+255 744 111 221 <span aria-hidden="true">↗</span></a></dd>
-          </div>
-          <div>
-            <dt>Location</dt>
-            <dd><address>Palm Street, Mbezi Beach<br />Dar es Salaam, Tanzania</address></dd>
-          </div>
-          <div>
-            <dt>Website</dt>
-            <dd><a href="https://digitaltownsquare.co.tz">digitaltownsquare.co.tz <span aria-hidden="true">↗</span></a></dd>
-          </div>
-        </dl>
+        <div className="contact-channel-grid">
+          <article className="contact-channel-card">
+            <span className="contact-channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M5 14.5 16 5l11 9.5" /><path d="M8 13v13h16V13M13 26v-8h6v8" /></svg>
+            </span>
+            <h3>Visit us</h3>
+            <p>Come and meet our team in Dar es Salaam.</p>
+            <address>Palm Street, Mbezi Beach<br />Dar es Salaam, Tanzania</address>
+          </article>
+
+          <article className="contact-channel-card">
+            <span className="contact-channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M8.5 5h5l2.4 7.2-3.3 2.4a20.5 20.5 0 0 0 5 5l2.3-3.4L27 18.7v4.8a3.5 3.5 0 0 1-3.5 3.5C13.3 27 5 18.7 5 8.5A3.5 3.5 0 0 1 8.5 5Z" /></svg>
+            </span>
+            <h3>Call us</h3>
+            <p>Speak directly with our team during business hours.</p>
+            <a href="tel:+255744111221">+255 744 111 221</a>
+          </article>
+
+          <article className="contact-channel-card">
+            <span className="contact-channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="18" rx="2" /><path d="m5 9 11 9 11-9" /></svg>
+            </span>
+            <h3>Email us</h3>
+            <p>Send us the context and we will connect you with the right person.</p>
+            <a href="mailto:hello@digitaltownsquare.co.tz">hello@digitaltownsquare.co.tz</a>
+            <a className="contact-website" href="https://digitaltownsquare.co.tz">digitaltownsquare.co.tz <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
       </section>
 
-      <section className="contact-context" aria-labelledby="contact-context-title">
-        <h2 id="contact-context-title">Looking for more context first?</h2>
-        <div>
-          <p>Explore what we do or see how our work has helped organisations turn complex questions into measurable progress.</p>
+      <section className="contact-location" aria-labelledby="contact-location-title">
+        <div className="contact-location-map">
+          <iframe
+            title="Street map of Dar es Salaam, Tanzania"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=39.15%2C-6.86%2C39.30%2C-6.70&amp;layer=mapnik&amp;marker=-6.7924%2C39.2083"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+        </div>
+        <div className="contact-location-copy">
+          <span className="contact-location-kicker">Dar es Salaam · Tanzania</span>
+          <h2 id="contact-location-title">Find us in Dar es Salaam.</h2>
+          <p>Looking for more context first? Explore our capabilities or see how our work turns complex questions into measurable progress.</p>
           <nav aria-label="Explore more">
+            <a href="https://www.openstreetmap.org/?mlat=-6.7924&amp;mlon=39.2083#map=12/-6.7924/39.2083" target="_blank" rel="noreferrer">Open full map <span aria-hidden="true">↗</span></a>
             <Link href="/services">Explore services <span aria-hidden="true">→</span></Link>
             <Link href="/case-study">View case studies <span aria-hidden="true">→</span></Link>
           </nav>
