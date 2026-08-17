@@ -5,6 +5,7 @@ import MobileNav from "../components/MobileNav";
 import teamImage from "../../public/images/quality-assurance-team.png";
 import analystsImage from "../../public/images/value-curiosity.png";
 import leaderImage from "../../public/images/value-innovation.png";
+import TeamCarousel from "./TeamCarousel";
 
 export const metadata: Metadata = {
   title: "About Us | digitalocean",
@@ -219,6 +220,8 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      <TeamCarousel />
 
       <section className="about-cta" aria-labelledby="about-cta-title">
         <h2 id="about-cta-title">Bring us the decision you need to make.</h2>
