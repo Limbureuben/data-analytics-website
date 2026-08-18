@@ -68,8 +68,9 @@ const securityHeaders = [
   },
 ];
 
+
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: "standalone", // Keep this! It tells Next.js to build a production Node server.
   poweredByHeader: false,
   reactStrictMode: true,
   async headers() {
