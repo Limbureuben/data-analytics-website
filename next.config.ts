@@ -69,11 +69,15 @@ const securityHeaders = [
 ];
 
 
+
 const nextConfig: NextConfig = {
-  output: "export", // Changed to export for public_html static hosting
+  output: "export",
   poweredByHeader: false,
   reactStrictMode: true,
+  images: {
+    unoptimized: true, // This stops Next.js from looking for a Node image server
+  },
+  trailingSlash: true, // This adds a "/" to paths so Hostinger maps styles perfectly
 };
 
 export default nextConfig;
-
