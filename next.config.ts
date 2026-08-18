@@ -70,17 +70,10 @@ const securityHeaders = [
 
 
 const nextConfig: NextConfig = {
-  output: "standalone", // Keep this! It tells Next.js to build a production Node server.
+  output: "export", // Changed to export for public_html static hosting
   poweredByHeader: false,
   reactStrictMode: true,
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
 };
 
 export default nextConfig;
+
