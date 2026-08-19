@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "digitalocean",
+  title: "Digital Town Square",
   description: "Social intelligence and data analytics for smarter decisions.",
 };
 

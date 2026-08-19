@@ -8,8 +8,8 @@ import innovationTeamImage from "../../public/images/value-innovation.png";
 import partnershipImage from "../../public/images/quality-assurance-team.png";
 
 export const metadata: Metadata = {
-  title: "Services | digitalocean",
-  description: "Explore Cortex Data Indonesia's data, AI, media and venture services.",
+  title: "Services | Digital Town Square",
+  description: "Explore Digital Town Square's data, AI, media and venture services.",
 };
 
 const services: Array<{
@@ -61,7 +61,7 @@ const services: Array<{
 
 function Logo({ useImage = false }: { useImage?: boolean }) {
   return (
-    <Link className="brand" href="/" aria-label="Cortex Data Indonesia home">
+    <Link className="brand" href="/" aria-label="Digital Town Square home">
       {useImage ? (
         <Image className="brand-logo-image" src="/images/logo3.png" alt="" width={112} height={45} priority />
       ) : (
@@ -69,7 +69,7 @@ function Logo({ useImage = false }: { useImage?: boolean }) {
           <path d="M19 0 38 10.5 27.7 16 19 11.2 10 16.2v10.2l9 4.8 8.8-4.8L38 32 19 42 0 31.5v-21Z" />
         </svg>
       )}
-      {!useImage && <span className="brand-name"><span>CORTEX DATA</span><span>INDONESIA</span></span>}
+      {!useImage && <span className="brand-name"><span>DIGITAL TOWN</span><span>SQUARE</span></span>}
     </Link>
   );
 }
@@ -84,7 +84,6 @@ export default function ServicesPage() {
           <Link className="active" href="/services">Services</Link>
           <Link href="/about">About</Link>
           <Link href="/case-study">Case Study</Link>
-          <Link href="/#blog">Blog</Link>
         </nav>
         <Link className="header-cta" href="/contact">Contact Us</Link>
         <MobileNav />
@@ -112,7 +111,7 @@ export default function ServicesPage() {
           <div className="services-feature-copy">
             <h2>For Organisations</h2>
             <p>Transform complex challenges with an integrated team of data, technology and media experts.</p>
-            <a href="mailto:hello@cortexdata.id">Build with us</a>
+            <Link href="/contact">Build with us</Link>
           </div>
           <Image src={dataTeamImage} alt="Black African data specialists collaborating" sizes="(max-width: 760px) 45vw, 240px" />
         </article>
@@ -120,7 +119,7 @@ export default function ServicesPage() {
           <div className="services-feature-copy">
             <h2>For Innovators</h2>
             <p>Validate new ideas, create intelligent products and turn opportunities into scalable ventures.</p>
-            <a href="mailto:hello@cortexdata.id">Start an idea</a>
+            <Link href="/contact">Start an idea</Link>
           </div>
           <Image src={innovationTeamImage} alt="Black African innovator developing a new digital product" sizes="(max-width: 760px) 45vw, 240px" />
         </article>
@@ -129,7 +128,7 @@ export default function ServicesPage() {
       <section className="services-card-grid" id="services-grid" aria-label="Our services">
         <div className="services-list-heading">
           <div><h2>Our services</h2><p>Four capabilities. One integrated team.</p></div>
-          <a href="mailto:hello@cortexdata.id">Start a conversation</a>
+          <Link href="/contact">Start a conversation</Link>
         </div>
         <div className="services-card-row">
           {services.map((service) => (
@@ -171,7 +170,7 @@ export default function ServicesPage() {
           <div className="services-next-step-copy">
             <p>Whether you are starting with an ambitious idea or a challenge that needs a fresh perspective, we are ready to explore what comes next.</p>
             <div>
-              <a href="mailto:hello@digitaltownsquare.co.tz">Start a conversation <span aria-hidden="true">↗</span></a>
+              <Link href="/contact">Start a conversation <span aria-hidden="true">↗</span></Link>
               <Link href="/case-study">View our work</Link>
             </div>
           </div>
@@ -193,7 +192,6 @@ export default function ServicesPage() {
             </div>
             <div>
               <Link href="/case-study">Case Study</Link>
-              <Link href="/#blog">Blog</Link>
               <Link href="/contact">Contact</Link>
             </div>
           </nav>
@@ -214,7 +212,7 @@ export default function ServicesPage() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Cortex Data Indonesia</span>
+          <span>© 2026 Digital Town Square</span>
           <span>Data intelligence for better decisions.</span>
         </div>
       </footer>

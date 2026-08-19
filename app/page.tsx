@@ -25,7 +25,12 @@ import valueClientImage from "../public/images/value-client-first.png";
 import valueCuriosityImage from "../public/images/value-curiosity.png";
 import valueInnovationImage from "../public/images/value-innovation.png";
 
-const navigation = ["Home", "Services", "About", "Case Study", "Blog"];
+const navigation = [
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Case Study", href: "/case-study" },
+];
 const serviceLinks = [
   { label: "Data & Analytics", href: "/services#data-analytics" },
   { label: "Technology & AI", href: "/services#technology-ai" },
@@ -201,9 +206,9 @@ function ServiceIcon({ number }: { number: string }) {
   );
 }
 
-function CortexLogo({ useImage = false }: { useImage?: boolean }) {
+function DigitalTownSquareLogo({ useImage = false }: { useImage?: boolean }) {
   return (
-    <a className="brand" href="#home" aria-label="Cortex Data Indonesia home">
+    <a className="brand" href="#home" aria-label="Digital Town Square home">
       {useImage ? (
         <Image className="brand-logo-image" src="/images/logo3.png" alt="" width={112} height={45} priority />
       ) : (
@@ -213,8 +218,8 @@ function CortexLogo({ useImage = false }: { useImage?: boolean }) {
       )}
       {!useImage && (
         <span className="brand-name">
-          <span>CORTEX DATA</span>
-          <span>INDONESIA</span>
+          <span>DIGITAL TOWN</span>
+          <span>SQUARE</span>
         </span>
       )}
     </a>
@@ -356,16 +361,16 @@ export default function Home() {
   return (
     <main ref={pageRef} className="site-shell" id="home">
       <header className="site-header">
-        <CortexLogo useImage />
+        <DigitalTownSquareLogo useImage />
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item, index) => (
             <a
-              key={item}
+              key={item.label}
               className={index === 0 ? "active" : undefined}
-              href={item === "Home" ? "#home" : item === "Services" ? "/services" : item === "About" ? "/about" : item === "Case Study" ? "/case-study" : `#${item.toLowerCase().replace(" ", "-")}`}
+              href={item.href}
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>
@@ -434,7 +439,7 @@ export default function Home() {
       <section className="understanding" aria-labelledby="understanding-title">
         <div className="understanding-intro" data-scroll-reveal>
           <h2 id="understanding-title">
-            AT CORTEX, WE PROVIDE TRUE
+            AT DIGITAL TOWN SQUARE, WE PROVIDE TRUE
             <br />
             UNDERSTANDING ABOUT
           </h2>
@@ -559,7 +564,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-inner" data-scroll-reveal>
           <div className="footer-company">
-            <CortexLogo useImage />
+            <DigitalTownSquareLogo useImage />
             <address>
               Dar es Salaam, Tanzania
             </address>
@@ -594,7 +599,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Cortex Data Indonesia</span>
+          <span>© 2026 Digital Town Square</span>
           <span>Data intelligence for better decisions.</span>
         </div>
       </footer>

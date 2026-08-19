@@ -5195,3 +5195,275 @@ a {
     animation: none;
   }
 }
+
+/* Shared responsive layout -------------------------------------------------
+   Keep every route on the same fluid grid: compact gutters on phones,
+   comfortable gutters on regular desktops, and a wider canvas on large
+   monitors without allowing text and cards to grow indefinitely. */
+:root {
+  --content-width: 1440px;
+  --page-gutter: clamp(16px, 2vw, 32px);
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body,
+main,
+section,
+header,
+footer,
+nav,
+div,
+article {
+  min-width: 0;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+address,
+dd {
+  overflow-wrap: break-word;
+}
+
+.site-header,
+.about-page .site-header {
+  padding-inline: max(
+    var(--page-gutter),
+    calc((100vw - var(--content-width)) / 2)
+  );
+}
+
+.site-footer {
+  padding-inline: var(--page-gutter);
+}
+
+.core-services-grid,
+.services-heading {
+  width: min(100%, 1200px);
+}
+
+.capability-quote {
+  width: min(100%, 1100px);
+}
+
+.about-page {
+  --about-page-gutter: var(--page-gutter);
+}
+
+.about-hero,
+.about-story,
+.about-facts,
+.about-purpose,
+.about-team,
+.about-team-carousel-header {
+  width: min(
+    calc(100% - var(--about-page-gutter) - var(--about-page-gutter)),
+    var(--content-width)
+  );
+}
+
+.about-principles-heading,
+.about-principles-grid {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+@media (max-width: 1100px) {
+  .services-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-channel-card {
+    padding-inline: 20px;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 1fr);
+    gap: 44px 64px;
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header,
+  .about-page .site-header {
+    height: 72px;
+    padding-inline: var(--page-gutter);
+    grid-template-columns: 1fr auto;
+    column-gap: 14px;
+  }
+
+  .desktop-nav,
+  .site-header .header-cta {
+    display: none;
+  }
+
+  .mobile-nav-trigger {
+    display: grid;
+  }
+
+  .hero {
+    top: 72px;
+    height: calc(100svh - 72px);
+  }
+
+  .services-feature-row,
+  .services-list-heading,
+  .services-card-row,
+  .services-partnership-inner,
+  .services-next-step-inner,
+  .case-study-stack,
+  .contact-page .contact-details,
+  .footer-inner,
+  .footer-bottom {
+    width: min(
+      calc(100% - var(--page-gutter) - var(--page-gutter)),
+      var(--content-width)
+    );
+  }
+
+  .contact-channel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-channel-card {
+    min-height: 0;
+    padding-block: 42px;
+  }
+
+  .contact-channel-card + .contact-channel-card {
+    border-top: 1px solid #e3e7ed;
+    border-left: 0;
+  }
+
+  .contact-channel-card p {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  .about-page .site-header {
+    height: 70px;
+    padding-inline: var(--page-gutter);
+  }
+
+  .footer-inner,
+  .footer-bottom {
+    width: 100%;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-contact {
+    grid-column: auto;
+  }
+
+  .quality-content h3 span,
+  .services-heading h2,
+  .services-next-step h2 span,
+  .case-study-hero h1 span,
+  .case-feature h2,
+  .about-hero-copy h1 span,
+  .about-purpose h2 span,
+  .about-team-copy h2 span,
+  .contact-hero-copy h1 span {
+    white-space: normal;
+  }
+
+  .case-feature h2 {
+    font-size: clamp(22px, 7vw, 32px);
+    line-height: 1.16;
+  }
+
+  .quality-content h3 {
+    max-width: 30rem;
+    font-size: clamp(20px, 6.2vw, 30px);
+  }
+
+  .about-principles-heading h2 {
+    font-size: clamp(28px, 9vw, 40px);
+    line-height: 1.08;
+  }
+
+  .services-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-list-heading,
+  .services-card-row,
+  .services-partnership-inner,
+  .services-next-step-inner,
+  .case-study-stack {
+    width: 100%;
+  }
+
+  .contact-page .contact-details,
+  .services-feature-row {
+    width: calc(100% - var(--page-gutter) - var(--page-gutter));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    left: var(--page-gutter);
+    right: var(--page-gutter);
+  }
+
+  .hero-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .services-card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .services-feature-card {
+    min-height: 230px;
+  }
+
+  .services-feature-copy {
+    width: 68%;
+  }
+
+  .case-feature-heading,
+  .case-study-card-topline-title {
+    gap: 20px;
+  }
+
+  .case-client-logos img {
+    max-width: 118px;
+  }
+
+  .contact-page .contact-hero h1 {
+    font-size: clamp(38px, 13vw, 52px);
+  }
+}

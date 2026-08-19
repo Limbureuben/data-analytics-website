@@ -8,9 +8,9 @@ import leaderImage from "../../public/images/value-innovation.png";
 import TeamCarousel from "./TeamCarousel";
 
 export const metadata: Metadata = {
-  title: "About Us | digitalocean",
+  title: "About Us | Digital Town Square",
   description:
-    "Meet Cortex Data Indonesia, a social intelligence analytics company turning complex signals into trusted, decision-ready insight.",
+    "Meet Digital Town Square, a social intelligence analytics company turning complex signals into trusted, decision-ready insight.",
 };
 
 const principles = [
@@ -36,7 +36,7 @@ const principles = [
 
 function Logo({ image = false }: { image?: boolean }) {
   return (
-    <Link className="brand" href="/" aria-label="Cortex Data Indonesia home">
+    <Link className="brand" href="/" aria-label="Digital Town Square home">
       {image ? (
         <Image
           className="brand-logo-image"
@@ -52,8 +52,8 @@ function Logo({ image = false }: { image?: boolean }) {
             <path d="M19 0 38 10.5 27.7 16 19 11.2 10 16.2v10.2l9 4.8 8.8-4.8L38 32 19 42 0 31.5v-21Z" />
           </svg>
           <span className="brand-name">
-            <span>CORTEX DATA</span>
-            <span>INDONESIA</span>
+            <span>DIGITAL TOWN</span>
+            <span>SQUARE</span>
           </span>
         </>
       )}
@@ -73,7 +73,6 @@ export default function AboutPage() {
             About
           </Link>
           <Link href="/case-study">Case Study</Link>
-          <Link href="/#blog">Blog</Link>
         </nav>
         <Link className="header-cta" href="/contact">
           Contact Us
@@ -120,7 +119,7 @@ export default function AboutPage() {
           </h2>
           <div className="about-story-columns">
             <p>
-              Cortex brings social research, modern data platforms and analytical
+              Digital Town Square brings social research, modern data platforms and analytical
               thinking together. We study the signals people leave behind, test them
               against real context and turn them into intelligence leaders can trust.
             </p>
@@ -133,7 +132,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-facts" aria-label="Cortex at a glance">
+      <section className="about-facts" aria-label="Digital Town Square at a glance">
         <article>
           <strong>4</strong>
           <span>Connected capabilities</span>
@@ -226,7 +225,7 @@ export default function AboutPage() {
       <section className="about-cta" aria-labelledby="about-cta-title">
         <h2 id="about-cta-title">Bring us the decision you need to make.</h2>
         <p>We will help you find the evidence, structure the question and build a clear way forward.</p>
-        <a href="mailto:hello@cortexdata.id">Start a conversation <span aria-hidden="true">→</span></a>
+        <Link href="/contact">Start a conversation <span aria-hidden="true">→</span></Link>
       </section>
 
       <footer className="site-footer">
@@ -265,7 +264,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Cortex Data Indonesia</span>
+          <span>© 2026 Digital Town Square</span>
           <span>Data intelligence for better decisions.</span>
         </div>
       </footer>

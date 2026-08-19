@@ -12,7 +12,6 @@ const links = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/case-study", label: "Case Study" },
-  { href: "/#blog", label: "Blog" },
 ];
 
 export default function MobileNav() {
@@ -25,7 +24,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const mobileViewport = window.matchMedia("(max-width: 760px)");
+    const mobileViewport = window.matchMedia("(max-width: 900px)");
     const handleViewportChange = (event: MediaQueryListEvent) => {
       if (!event.matches) setOpen(false);
     };

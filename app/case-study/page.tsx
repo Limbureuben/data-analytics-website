@@ -5,9 +5,9 @@ import MobileNav from "../components/MobileNav";
 import CaseStudyMotion from "./CaseStudyMotion";
 
 export const metadata: Metadata = {
-  title: "Case Studies | digitalocean",
+  title: "Case Studies | Digital Town Square",
   description:
-    "Explore how Cortex turns research, data and technology into measurable impact across East Africa.",
+    "Explore how Digital Town Square turns research, data and technology into measurable impact across East Africa.",
 };
 
 const projects = [
@@ -114,7 +114,7 @@ const projects = [
 
 function Logo({ footer = false }: { footer?: boolean }) {
   return (
-    <Link className="brand" href="/" aria-label="Cortex Data Indonesia home">
+    <Link className="brand" href="/" aria-label="Digital Town Square home">
       <Image
         className="brand-logo-image"
         src={footer ? "/images/logo2.png" : "/images/logo3.png"}
@@ -141,7 +141,6 @@ export default function CaseStudyPage() {
           <Link href="/services">Services</Link>
           <Link href="/about">About</Link>
           <Link className="active" href="/case-study" aria-current="page">Case Study</Link>
-          <Link href="/#blog">Blog</Link>
         </nav>
         <Link className="header-cta" href="/contact">Contact Us</Link>
         <MobileNav />
@@ -225,7 +224,7 @@ export default function CaseStudyPage() {
       <section className="case-study-cta" aria-labelledby="case-cta-title" data-case-reveal="fade">
         <h2 id="case-cta-title">Let&apos;s create impact we can measure.</h2>
         <p>Bring us the outcome you need. We will connect the research, technology and delivery required to move it forward.</p>
-        <a href="mailto:hello@digitaltownsquare.co.tz">Start a conversation <span aria-hidden="true">→</span></a>
+        <Link href="/contact">Start a conversation <span aria-hidden="true">→</span></Link>
       </section>
 
       <footer className="site-footer">
@@ -243,7 +242,6 @@ export default function CaseStudyPage() {
             </div>
             <div>
               <Link href="/case-study">Case Study</Link>
-              <Link href="/#blog">Blog</Link>
               <Link href="/contact">Contact</Link>
             </div>
           </nav>
@@ -264,7 +262,7 @@ export default function CaseStudyPage() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Cortex Data Indonesia</span>
+          <span>© 2026 Digital Town Square</span>
           <span>Data intelligence for better decisions.</span>
         </div>
       </footer>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import MobileNav from "../components/MobileNav";
 
 export const metadata: Metadata = {
-  title: "Contact | digitalocean",
+  title: "Contact | Digital Town Square",
   description: "Start a conversation with the Digital Town Square team.",
 };
 
@@ -33,7 +33,6 @@ export default function ContactPage() {
           <Link href="/services">Services</Link>
           <Link href="/about">About</Link>
           <Link href="/case-study">Case Study</Link>
-          <Link href="/#blog">Blog</Link>
         </nav>
         <Link className="header-cta" href="/contact" aria-current="page">Contact Us</Link>
         <MobileNav />
@@ -128,7 +127,6 @@ export default function ContactPage() {
             </div>
             <div>
               <Link href="/case-study">Case Study</Link>
-              <Link href="/#blog">Blog</Link>
               <Link href="/contact">Contact</Link>
             </div>
           </nav>
@@ -148,7 +146,7 @@ export default function ContactPage() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Cortex Data Indonesia</span>
+          <span>© 2026 Digital Town Square</span>
           <span>Data intelligence for better decisions.</span>
         </div>
       </footer>
