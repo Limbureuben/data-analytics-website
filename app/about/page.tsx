@@ -5,7 +5,7 @@ import MobileNav from "../components/MobileNav";
 import teamImage from "../../public/images/quality-assurance-team.png";
 import analystsImage from "../../public/images/value-curiosity.png";
 import leaderImage from "../../public/images/value-innovation.png";
-import TeamCarousel from "./TeamCarousel";
+import WhoWeAreSection from "./WhoWeAreSection";
 
 export const metadata: Metadata = {
   title: "About Us | Digital Town Square",
@@ -220,7 +220,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <TeamCarousel />
+      <WhoWeAreSection />
 
       <section className="about-cta" aria-labelledby="about-cta-title">
         <h2 id="about-cta-title">Bring us the decision you need to make.</h2>

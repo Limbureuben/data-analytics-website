@@ -19,11 +19,7 @@ import venture37Logo from "../public/images/logo/venture37.DBRp6bAj_1X4vqr.webp"
 import vodacomLogo from "../public/images/logo/vodacom.DDqwzXYW_Z3DoeG.webp";
 import marketImage from "../public/images/market-card.png";
 import peopleImage from "../public/images/people.png";
-import qualityAssuranceImage from "../public/images/quality-assurance-team.png";
 import societyImage from "../public/images/society-posta.png";
-import valueClientImage from "../public/images/value-client-first.png";
-import valueCuriosityImage from "../public/images/value-curiosity.png";
-import valueInnovationImage from "../public/images/value-innovation.png";
 
 const navigation = [
   { label: "Home", href: "#home" },
@@ -78,92 +74,6 @@ const partners = [
   { name: "Land O'Lakes Venture37", image: venture37Logo },
   { name: "Vodacom", image: vodacomLogo },
 ];
-
-const values = [
-  {
-    title: "ANALYTICAL CURIOSITY",
-    description:
-      "We question every signal, explore every dataset and test assumptions to uncover patterns that turn complex information into clear, actionable insight.",
-    image: valueCuriosityImage,
-    alt: "Black African data analysts exploring charts together on a laptop",
-  },
-  {
-    title: "BOLD EXPERIMENTATION",
-    description:
-      "We combine predictive analytics, statistical modelling and responsible AI to discover smarter approaches, validate ideas and improve every decision.",
-    image: valueInnovationImage,
-    alt: "Black African analytics leader surrounded by predictive data visualizations",
-  },
-  {
-    title: "CLIENT-FIRST INTELLIGENCE",
-    description:
-      "We design dashboards, forecasts and data strategies around real client goals—delivering measurable outcomes, not analytics for analytics' sake.",
-    image: valueClientImage,
-    alt: "Black African data consultant presenting dashboard insights to clients",
-  },
-];
-
-const capabilities = [
-  {
-    icon: "research",
-    title: "SOCIAL INTELLIGENCE RESEARCH",
-    description: (
-      <>
-        <strong>Two analytics centres of excellence</strong> coordinate data collection,
-        verification and insight delivery across audience, market and behavioural research.
-      </>
-    ),
-    detail: null,
-  },
-  {
-    icon: "engineering",
-    title: "DATA ENGINEERING",
-    description: (
-      <>
-        We use <strong>modern cloud data technology</strong> to build reliable pipelines,
-        automate quality checks and accelerate analytics delivery at scale.
-      </>
-    ),
-    detail: null,
-  },
-  {
-    icon: "client",
-    title: "CLIENT-FIRST ANALYTICS",
-    description: (
-      <>
-        Our <strong>experienced analytics consultants</strong> transform social, market and
-        operational data into clear recommendations tied to client objectives.
-      </>
-    ),
-    detail: null,
-  },
-];
-
-function CapabilityIcon({ type }: { type: string }) {
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      {type === "research" && (
-        <>
-          <path d="M5 25V12m7 13V7m7 18v-9" />
-          <path d="M23.5 18.5 28 23m-2-9a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" />
-        </>
-      )}
-      {type === "engineering" && (
-        <>
-          <path d="m16 4 10 5.8v12.4L16 28 6 22.2V9.8Z" />
-          <path d="m6 10 10 6 10-6M16 16v12M11 7l10 6M21 7l-10 6M6 22l10-6 10 6" />
-        </>
-      )}
-      {type === "client" && (
-        <>
-          <circle cx="12" cy="13" r="3" />
-          <circle cx="21.5" cy="10" r="2.5" />
-          <path d="M6 25c.4-5 2.4-7.5 6-7.5s5.6 2.5 6 7.5M18 15c4.6-.7 7.3 2 8 6" />
-        </>
-      )}
-    </svg>
-  );
-}
 
 const coreServices = [
   {
@@ -398,9 +308,9 @@ export default function Home() {
 
           <div ref={heroContentRef} className="hero-content">
             <h1 id="hero-title">
-              A SOCIAL INTELLIGENCE
+              WE TURN DATA INTO INTELLIGENCE.
               <br />
-              ANALYTICS COMPANY
+              AND INTELLIGENCE INTO ACTION.
             </h1>
             <div className="hero-actions">
               <a className="button button-primary" href="/contact">
@@ -439,14 +349,14 @@ export default function Home() {
       <section className="understanding" aria-labelledby="understanding-title">
         <div className="understanding-intro" data-scroll-reveal>
           <h2 id="understanding-title">
-            AT DIGITAL TOWN SQUARE, WE PROVIDE TRUE
+            BUILT FOR ORGANIZATIONS THAT NEED TO
             <br />
-            UNDERSTANDING ABOUT
+            UNDERSTAND PEOPLE, NOT JUST DATA.
           </h2>
           <p>
-            To help our clients make smarter, faster, cheaper and better
+            We combine audience intelligence, data, AI and digital execution to help
             <br />
-            prediction, decision, monitoring and evaluation.
+            organisations understand what is happening, why it matters, and what to do next.
           </p>
         </div>
 
@@ -465,76 +375,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="values" id="about" aria-labelledby="values-title">
-        <h2 id="values-title" data-scroll-reveal>OUR VALUES</h2>
-        <div className="values-grid">
-          {values.map((value) => (
-            <article className="value-card" key={value.title} data-scroll-reveal>
-              <div className="value-copy">
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </div>
-              <div className="value-image-wrap">
-                <Image
-                  className="value-image"
-                  src={value.image}
-                  alt={value.alt}
-                  sizes="(max-width: 760px) 84vw, (max-width: 1100px) 28vw, 270px"
-                />
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="quality" id="case-study" aria-labelledby="quality-title">
-        <div className="quality-heading" data-scroll-reveal>
-          <h2 id="quality-title">QUALITY ASSURANCE</h2>
-          <p>OUR COMMITMENT TO TRUSTED, DECISION-READY DATA</p>
-        </div>
-
-        <div className="quality-banner" data-scroll-reveal>
-          <Image
-            className="quality-image"
-            src={qualityAssuranceImage}
-            alt="Black African analytics and quality engineering team celebrating a validated data release"
-            sizes="(max-width: 760px) 94vw, 88vw"
-          />
-          <div className="quality-overlay" />
-          <div className="quality-content">
-            <h3>
-              <span>INCORPORATING THE LATEST DATA TECHNOLOGIES</span>
-              <span>FOR ANALYTICS QUALITY ASSURANCE</span>
-            </h3>
-            <a href="/contact">Contact Us</a>
+      <section className="impact" aria-labelledby="impact-title">
+        <div className="impact-inner">
+          <div className="impact-heading" data-scroll-reveal>
+            <span>IMPACT</span>
+            <h2 id="impact-title">Measurable results across Africa.</h2>
           </div>
+          <dl className="impact-stats" aria-label="Digital Town Square impact statistics">
+            <div data-scroll-reveal>
+              <dd>10M+</dd>
+              <dt>People Reached</dt>
+            </div>
+            <div data-scroll-reveal>
+              <dd>500K+</dd>
+              <dt>Meaningful Engagements</dt>
+            </div>
+            <div data-scroll-reveal>
+              <dd>25+</dd>
+              <dt>Projects Delivered</dt>
+            </div>
+            <div data-scroll-reveal>
+              <dd>9+</dd>
+              <dt>Organizations Served</dt>
+            </div>
+          </dl>
         </div>
-      </section>
-
-      <section className="capabilities" aria-labelledby="capabilities-title">
-        <h2 className="sr-only" id="capabilities-title">Our analytics capabilities</h2>
-        <div className="capability-grid">
-          {capabilities.map((capability) => (
-            <article className="capability-card" key={capability.title} data-scroll-reveal>
-              <div className="capability-icon">
-                <CapabilityIcon type={capability.icon} />
-              </div>
-              <h3>{capability.title}</h3>
-              <p>{capability.description}</p>
-              {capability.detail && <p>{capability.detail}</p>}
-            </article>
-          ))}
-        </div>
-
-        <blockquote className="capability-quote" data-scroll-reveal>
-          <span aria-hidden="true">“</span>
-          <p>
-            Through specialised data analytics services, our teams deliver accurate,
-            relevant intelligence that helps you make smarter decisions faster and more
-            consistently across markets.
-          </p>
-          <span aria-hidden="true">”</span>
-        </blockquote>
       </section>
 
       <section className="core-services" id="services" aria-labelledby="core-services-title">
