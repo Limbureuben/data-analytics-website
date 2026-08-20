@@ -378,7 +378,6 @@ export default function Home() {
       <section className="impact" aria-labelledby="impact-title">
         <div className="impact-inner">
           <div className="impact-heading" data-scroll-reveal>
-            <span>IMPACT</span>
             <h2 id="impact-title">Measurable results across Africa.</h2>
           </div>
           <dl className="impact-stats" aria-label="Digital Town Square impact statistics">
