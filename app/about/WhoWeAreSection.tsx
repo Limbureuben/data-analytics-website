@@ -163,7 +163,6 @@ export default function WhoWeAreSection() {
 
       <section className="who-we-are-story" aria-labelledby="who-story-title">
         <div className="who-section-heading">
-          <span>01</span>
           <h3 id="who-story-title">Our story</h3>
         </div>
         <div className="who-story-copy">

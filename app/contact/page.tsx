@@ -49,7 +49,6 @@ export default function ContactPage() {
         />
         <div className="contact-hero-overlay" aria-hidden="true" />
         <div className="contact-hero-inner">
-          <p className="contact-hero-kicker">Start a conversation</p>
           <h1 id="contact-title">Contact us</h1>
           <span className="contact-hero-rule" aria-hidden="true"><i /><i /><i /><i /><i /></span>
           <p>Tell us what you are building, researching, or trying to solve. We will help you identify the right next step.</p>
@@ -68,7 +67,7 @@ export default function ContactPage() {
             </span>
             <h3>Visit us</h3>
             <p>Come and meet our team in Dar es Salaam.</p>
-            <address>Palm Street, Mbezi Beach<br />Dar es Salaam, Tanzania</address>
+            <address>Palm Street-Mbezi Beach,<br />Dar es Salaam, Tanzania</address>
           </article>
 
           <article className="contact-channel-card">
@@ -95,10 +94,11 @@ export default function ContactPage() {
       <section className="contact-location" aria-labelledby="contact-location-title">
         <div className="contact-location-map">
           <iframe
-            title="Street map of Dar es Salaam, Tanzania"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=39.15%2C-6.86%2C39.30%2C-6.70&amp;layer=mapnik&amp;marker=-6.7924%2C39.2083"
+            title="Satellite map of Palm Street-Mbezi Beach, Dar es Salaam"
+            src="https://maps.google.com/maps?q=Palm%20Street-Mbezi%20Beach%2C%20Dar%20es%20Salaam%2C%20Tanzania&amp;t=k&amp;z=16&amp;output=embed"
             loading="lazy"
             referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           />
         </div>
         <div className="contact-location-copy">
@@ -106,7 +106,7 @@ export default function ContactPage() {
           <h2 id="contact-location-title">Find us in Dar es Salaam.</h2>
           <p>Looking for more context first? Explore our capabilities or see how our work turns complex questions into measurable progress.</p>
           <nav aria-label="Explore more">
-            <a href="https://www.openstreetmap.org/?mlat=-6.7924&amp;mlon=39.2083#map=12/-6.7924/39.2083" target="_blank" rel="noreferrer">Open full map <span aria-hidden="true">↗</span></a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Palm%20Street-Mbezi%20Beach%2C%20Dar%20es%20Salaam%2C%20Tanzania" target="_blank" rel="noreferrer">Open full map <span aria-hidden="true">↗</span></a>
             <Link href="/services">Explore services <span aria-hidden="true">→</span></Link>
             <Link href="/case-study">View case studies <span aria-hidden="true">→</span></Link>
           </nav>
@@ -117,7 +117,7 @@ export default function ContactPage() {
         <div className="footer-inner">
           <div className="footer-company">
             <Logo footer />
-            <address>Dar es Salaam, Tanzania</address>
+            <address>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</address>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
             <div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
             </a>
             <span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
-              <span>Dar es Salaam, Tanzania</span>
+              <span>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</span>
             </span>
           </div>
         </div>

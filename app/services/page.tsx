@@ -14,56 +14,81 @@ export const metadata: Metadata = {
 
 const services: Array<{
   id: string;
-  number: string;
   title: string;
-  lead: string;
+  tagline: string;
+  summary: string;
   description: string;
   capabilities: string[];
-  deliverable: string;
 }> = [
   {
     id: "data-analytics",
-    number: "01",
     title: "Data & Analytics",
-    lead: "From fragmented information to a trusted foundation for better decisions.",
-    description: "Turn complex data into clear insights, trusted dashboards and better decisions.",
-    capabilities: ["Data strategy & governance", "Cloud data platforms", "Business intelligence"],
-    deliverable: "Reliable data products, clear dashboards and practical insight your teams can act on.",
+    tagline: "Insight. Evidence. Action.",
+    summary: "Turn complex data into clear insights, trusted dashboards and better decisions.",
+    description: "We design and build data infrastructure, research frameworks, and interactive dashboards that help organizations understand their context and make better decisions.",
+    capabilities: [
+      "Research design & surveys",
+      "Dashboards & visualization",
+      "Monitoring & evaluation systems",
+      "Market & audience analytics",
+      "Predictive analytics",
+    ],
   },
   {
     id: "technology-ai",
-    number: "02",
     title: "Technology & AI",
-    lead: "Useful, responsible technology designed around people and measurable outcomes.",
-    description: "Build intelligent products, automation and scalable platforms around real needs.",
-    capabilities: ["AI strategy & prototyping", "Product engineering", "Workflow automation"],
-    deliverable: "Production-ready digital solutions that are secure, scalable and easy to use.",
+    tagline: "Systems that scale.",
+    summary: "Build intelligent products, automation and scalable platforms around real needs.",
+    description: "We build digital tools, automation workflows, and AI-powered solutions that make organizations more efficient and effective.",
+    capabilities: [
+      "Custom web & mobile platforms",
+      "AI tools & automation",
+      "SMS & USSD systems",
+      "Data pipelines & APIs",
+      "Custom ML models",
+    ],
   },
   {
     id: "digital-media",
-    number: "03",
     title: "Digital Campaigns & Media",
-    lead: "Campaigns that connect creative ideas with evidence and audience intelligence.",
-    description: "Connect audience insight, creative content and media to deliver measurable impact.",
-    capabilities: ["Audience intelligence", "Campaign strategy", "Content & creative"],
-    deliverable: "Integrated campaigns with a clear message, measurable reach and transparent performance.",
+    tagline: "Stories that move people.",
+    summary: "Connect audience insight, creative content and media to deliver measurable impact.",
+    description: "We produce and distribute campaigns across radio, digital, and community channels. Our approach blends behavioral science with creative storytelling.",
+    capabilities: [
+      "Behavior change campaigns",
+      "Social media strategy & content",
+      "Radio & podcast production",
+      "Community engagement programs",
+    ],
   },
   {
     id: "innovation-ventures",
-    number: "04",
     title: "Innovation & Ventures",
-    lead: "A disciplined path from promising opportunity to validated new venture.",
-    description: "Validate bold ideas quickly and build new ventures designed for sustainable growth.",
-    capabilities: ["Opportunity discovery", "Venture design", "Rapid validation"],
-    deliverable: "Validated concepts, investable business models and a practical roadmap to market.",
+    tagline: "Ideas into products.",
+    summary: "Validate bold ideas quickly and build new ventures designed for sustainable growth.",
+    description: "We co-develop new products, support incubation, and help organizations move from concept to market-ready solutions.",
+    capabilities: [
+      "Product discovery & prototyping",
+      "Innovation sprints",
+      "Startup incubation support",
+      "Go-to-market strategy",
+      "MVP development",
+    ],
   },
 ];
 
-function Logo({ useImage = false }: { useImage?: boolean }) {
+function Logo({ useImage = false, footer = false }: { useImage?: boolean; footer?: boolean }) {
   return (
     <Link className="brand" href="/" aria-label="Digital Town Square home">
       {useImage ? (
-        <Image className="brand-logo-image" src="/images/logo3.png" alt="" width={112} height={45} priority />
+        <Image
+          className="brand-logo-image"
+          src={footer ? "/images/logo2.png" : "/images/logo3.png"}
+          alt=""
+          width={112}
+          height={45}
+          priority
+        />
       ) : (
         <svg className="brand-mark" viewBox="0 0 38 42" aria-hidden="true">
           <path d="M19 0 38 10.5 27.7 16 19 11.2 10 16.2v10.2l9 4.8 8.8-4.8L38 32 19 42 0 31.5v-21Z" />
@@ -133,13 +158,69 @@ export default function ServicesPage() {
         <div className="services-card-row">
           {services.map((service) => (
             <article className="services-page-card" id={service.id} key={service.id}>
-              <div className="service-card-symbol">{service.number}</div>
               <h2>{service.title}</h2>
-              <p>{service.description}</p>
-              <ul>{service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}</ul>
+              <p>{service.summary}</p>
+              <ul>{service.capabilities.slice(0, 3).map((capability) => <li key={capability}>{capability}</li>)}</ul>
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="service-lines" aria-labelledby="service-lines-title">
+        <header className="service-lines-intro">
+          <h2 id="service-lines-title">OUR SERVICE</h2>
+          <p>We work at the intersection of data, technology, and media to deliver solutions that create real impact.</p>
+        </header>
+
+        <div className="service-lines-list">
+          {services.map((service) => (
+            <article className="service-line" key={`${service.id}-details`}>
+              <div className="service-line-heading">
+                <h3>{service.title}</h3>
+                <p>{service.tagline}</p>
+              </div>
+              <div className="service-line-body">
+                <p>{service.description}</p>
+                <h4>Capabilities</h4>
+                <ul>
+                  {service.capabilities.map((capability) => (
+                    <li key={capability}>{capability}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="how-we-work" aria-labelledby="how-we-work-title">
+        <header className="how-we-work-heading">
+          <p>How We Work</p>
+          <h2 id="how-we-work-title">A clear process, every time.</h2>
+        </header>
+
+        <ol className="how-we-work-steps">
+          <li>
+            <span>01</span>
+            <h3>Research</h3>
+            <p>We listen, analyze, and understand the problem space before anything else.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Design</h3>
+            <p>We shape strategies and solutions that are grounded in evidence and insight.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Build</h3>
+            <p>We develop systems, campaigns, and platforms with precision and craft.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Scale</h3>
+            <p>We measure impact and iterate to drive sustainable, scalable results.</p>
+          </li>
+        </ol>
       </section>
 
       <section className="services-partnership" aria-labelledby="services-partnership-title">
@@ -180,8 +261,8 @@ export default function ServicesPage() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-company">
-            <Logo useImage />
-            <address>Dar es Salaam, Tanzania</address>
+            <Logo useImage footer />
+            <address>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</address>
           </div>
 
           <nav className="footer-nav" aria-label="Footer navigation">
@@ -207,7 +288,7 @@ export default function ServicesPage() {
             </a>
             <span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
-              <span>Dar es Salaam, Tanzania</span>
+              <span>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</span>
             </span>
           </div>
         </div>

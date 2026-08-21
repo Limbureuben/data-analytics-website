@@ -116,11 +116,24 @@ function ServiceIcon({ number }: { number: string }) {
   );
 }
 
-function DigitalTownSquareLogo({ useImage = false }: { useImage?: boolean }) {
+function DigitalTownSquareLogo({
+  useImage = false,
+  footer = false,
+}: {
+  useImage?: boolean;
+  footer?: boolean;
+}) {
   return (
     <a className="brand" href="#home" aria-label="Digital Town Square home">
       {useImage ? (
-        <Image className="brand-logo-image" src="/images/logo3.png" alt="" width={112} height={45} priority />
+        <Image
+          className="brand-logo-image"
+          src={footer ? "/images/logo2.png" : "/images/logo3.png"}
+          alt=""
+          width={112}
+          height={45}
+          priority
+        />
       ) : (
         <svg className="brand-mark" viewBox="0 0 38 42" aria-hidden="true">
           <path d="M19 0 38 10.5 27.7 16 19 11.2 10 16.2v10.2l9 4.8 8.8-4.8L38 32 19 42 0 31.5v-21Z" />
@@ -428,9 +441,9 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-inner" data-scroll-reveal>
           <div className="footer-company">
-            <DigitalTownSquareLogo useImage />
+            <DigitalTownSquareLogo useImage footer />
             <address>
-              Dar es Salaam, Tanzania
+              Palm Street-Mbezi Beach, Dar es Salaam, Tanzania
             </address>
           </div>
 
@@ -458,7 +471,7 @@ export default function Home() {
             </a>
             <span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
-              <span>Dar es Salaam, Tanzania</span>
+              <span>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</span>
             </span>
           </div>
         </div>

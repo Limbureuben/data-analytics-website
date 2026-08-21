@@ -34,13 +34,13 @@ const principles = [
   },
 ];
 
-function Logo({ image = false }: { image?: boolean }) {
+function Logo({ image = false, footer = false }: { image?: boolean; footer?: boolean }) {
   return (
     <Link className="brand" href="/" aria-label="Digital Town Square home">
       {image ? (
         <Image
           className="brand-logo-image"
-          src="/images/logo3.png"
+          src={footer ? "/images/logo2.png" : "/images/logo3.png"}
           alt=""
           width={112}
           height={45}
@@ -231,9 +231,9 @@ export default function AboutPage() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-company">
-            <Logo image />
+            <Logo image footer />
             <address>
-              Dar es Salaam, Tanzania
+              Palm Street-Mbezi Beach, Dar es Salaam, Tanzania
             </address>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
@@ -259,7 +259,7 @@ export default function AboutPage() {
             </a>
             <span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
-              <span>Dar es Salaam, Tanzania</span>
+              <span>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</span>
             </span>
           </div>
         </div>

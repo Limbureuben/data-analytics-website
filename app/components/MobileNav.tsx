@@ -121,7 +121,7 @@ export default function MobileNav() {
 
             <div className="mobile-nav-drawer-footer">
               <Link href="/contact" onClick={closeDrawer}>Contact Us <span aria-hidden="true">→</span></Link>
-              <p>Dar es Salaam, Tanzania</p>
+              <p>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</p>
             </div>
           </aside>
         </div>,
