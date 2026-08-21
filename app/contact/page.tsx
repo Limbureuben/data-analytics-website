@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "../components/MobileNav";
+import AsyncMap from "./AsyncMap";
 
 export const metadata: Metadata = {
   title: "Contact | Digital Town Square",
@@ -93,13 +94,7 @@ export default function ContactPage() {
 
       <section className="contact-location" aria-labelledby="contact-location-title">
         <div className="contact-location-map">
-          <iframe
-            title="Satellite map of Palm Street-Mbezi Beach, Dar es Salaam"
-            src="https://maps.google.com/maps?q=Palm%20Street-Mbezi%20Beach%2C%20Dar%20es%20Salaam%2C%20Tanzania&amp;t=k&amp;z=16&amp;output=embed"
-            loading="lazy"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
+          <AsyncMap />
         </div>
         <div className="contact-location-copy">
           <span className="contact-location-kicker">Dar es Salaam · Tanzania</span>

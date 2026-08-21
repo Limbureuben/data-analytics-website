@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "../components/MobileNav";
+import ServiceFAQ from "./ServiceFAQ";
 import servicesHeroImage from "../../public/images/girl3.png";
 import dataTeamImage from "../../public/images/value-curiosity.png";
 import innovationTeamImage from "../../public/images/value-innovation.png";
@@ -244,6 +245,8 @@ export default function ServicesPage() {
           </ol>
         </div>
       </section>
+
+      <ServiceFAQ />
 
       <section className="services-next-step" aria-labelledby="services-next-step-title">
         <div className="services-next-step-inner">

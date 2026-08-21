@@ -105,13 +105,33 @@ const coreServices = [
 function ServiceIcon({ number }: { number: string }) {
   const index = Number(number);
   return (
-    <svg viewBox="0 0 56 56" aria-hidden="true">
-      {index === 1 && <><rect x="7" y="10" width="42" height="31" rx="6" /><path d="M16 20v8m-4-4h8m21-2h-8M17 48h22" /></>}
-      {index === 2 && <><rect x="8" y="9" width="34" height="39" rx="4" /><path d="m22 27 24-14 3 6-24 14-8 1Z" /></>}
-      {index === 3 && <><path d="m28 5 16 7v13c0 11-6.5 19-16 25-9.5-6-16-14-16-25V12Z" /><circle cx="28" cy="26" r="8" /><path d="m34 32 6 6" /></>}
-      {index === 4 && <><path d="M16 8v9H7m33-9v9h9M16 48v-9H7m33 9v-9h9" /><circle cx="28" cy="28" r="10" /></>}
-      {index === 5 && <><rect x="10" y="6" width="36" height="44" rx="9" /><path d="M20 23h16M23 33h10" /></>}
-      {index === 6 && <><path d="M8 44V34m12 10V27m12 17V20m12 24V11" /><path d="m8 27 12-11 10 6L45 7m-8 0h8v8" /></>}
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {index === 1 && (
+        <>
+          <path d="M4 19V11M10 19V7M16 19V4M3 19h18" />
+          <path d="m15 7 3-3 3 3" />
+        </>
+      )}
+      {index === 2 && (
+        <>
+          <path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16" />
+          <path d="M19 3v3M17.5 4.5h3" />
+        </>
+      )}
+      {index === 3 && (
+        <>
+          <path d="M4 10v4a2 2 0 0 0 2 2h2l10 4V4L8 8H6a2 2 0 0 0-2 2Z" />
+          <path d="m8 16 1.5 4H13l-2-5M21 9v6" />
+        </>
+      )}
+      {index === 4 && (
+        <>
+          <path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 21 3c0 2.7-.8 7.5-6 11a22 22 0 0 1-3 1Z" />
+          <path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5" />
+          <circle cx="16" cy="8" r="1.5" />
+          <path d="M7.5 17.5c-1.5 1.3-2 4-2 4s2.7-.5 4-2" />
+        </>
+      )}
     </svg>
   );
 }
