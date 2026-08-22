@@ -29,7 +29,7 @@ export default function CaseStudyMotion() {
         counterFrames.delete(counter);
 
         const finalValue = counter.dataset.caseCount ?? counter.textContent ?? "";
-        const match = finalValue.match(/^(\d+)(.*)$/);
+        const match = finalValue.match(/^([\d,]+)(.*)$/);
         if (match) counter.textContent = `0${match[2]}`;
       });
     };
@@ -42,11 +42,14 @@ export default function CaseStudyMotion() {
         if (activeFrame !== undefined) window.cancelAnimationFrame(activeFrame);
 
         const finalValue = counter.dataset.caseCount ?? counter.textContent ?? "";
-        const match = finalValue.match(/^(\d+)(.*)$/);
+        const match = finalValue.match(/^([\d,]+)(.*)$/);
         if (!match) return;
 
-        const target = Number(match[1]);
+        const target = Number(match[1].replaceAll(",", ""));
         const suffix = match[2];
+        const usesThousandsSeparators = match[1].includes(",");
+        const formatValue = (value: number) =>
+          usesThousandsSeparators ? value.toLocaleString("en-US") : String(value);
         const duration = 460;
         let startTime: number | undefined;
 
@@ -56,7 +59,7 @@ export default function CaseStudyMotion() {
           startTime ??= time;
           const progress = Math.min((time - startTime) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          counter.textContent = `${Math.round(target * eased)}${suffix}`;
+          counter.textContent = `${formatValue(Math.round(target * eased))}${suffix}`;
 
           if (progress < 1) {
             const frame = window.requestAnimationFrame(tick);

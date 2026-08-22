@@ -23,9 +23,9 @@ const projects = [
     impact:
       "Reach targets were exceeded. Listeners placed advance orders for SASSO chicks—a trackable purchase behaviour, not a proxy metric.",
     metrics: [
-      ["45000+", "People reached"],
-      ["5000+", "Farmers engaged directly"],
-      ["5K+", "Advance chick orders"],
+      ["930,000+", "People reached"],
+      ["50,000+", "Farmers engaged directly"],
+      ["5K–10K", "Advance chick orders"],
       ["600+", "Calls & SMS interactions"],
     ],
     logos: [
@@ -69,7 +69,9 @@ const projects = [
       ["2 markets", "Kenya & Tanzania"],
       ["Live", "Sentiment & trend tracking"],
     ],
-    logos: [],
+    logos: [
+      ["/images/logo/shujaaz-logo.png", "Shujaaz Inc"],
+    ],
     tone: "violet",
   },
   {
@@ -87,7 +89,9 @@ const projects = [
       ["Audience-led", "Research approach"],
       ["Actionable", "Strategy output"],
     ],
-    logos: [],
+    logos: [
+      ["/images/logo/bcc-logo.jpeg", "BBC Media Action"],
+    ],
     tone: "slate",
   },
   {
@@ -157,10 +161,11 @@ export default function CaseStudyPage() {
             we have created impact.
           </p>
         </div>
-        <div className="case-study-hero-proof" aria-label="Portfolio highlights" data-case-reveal="right">
-          <div><strong>5</strong><span>Case studies</span></div>
-          <div><strong>2</strong><span>East African countries</span></div>
-          <div><strong>3.9M+</strong><span>Young Kenyans reached</span></div>
+        <div className="case-study-hero-proof" aria-label="Digital Town Square impact statistics" data-case-reveal="right">
+          <div><strong>10M+</strong><span>People Reached</span></div>
+          <div><strong>500K+</strong><span>Meaningful Engagements</span></div>
+          <div><strong>25+</strong><span>Projects Delivered</span></div>
+          <div><strong>9+</strong><span>Organizations Served</span></div>
         </div>
       </section>
 

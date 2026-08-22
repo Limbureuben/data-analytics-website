@@ -171,25 +171,42 @@ export default function WhoWeAreSection() {
             more data than they can turn into meaningful decisions.
           </p>
           <div>
-            <p>
-              We created a different kind of company by bringing data scientists,
-              software engineers, researchers, and creative storytellers into one team.
-              Together, we help organizations understand people, build better systems,
-              and design campaigns that create measurable change.
-            </p>
-            <p>
-              Since then, our work has supported national health campaigns, digital public
-              engagement, election monitoring, agricultural development, and audience
-              intelligence across Africa. Our projects have reached millions of people,
-              helping partners make smarter decisions and deliver stronger results.
-            </p>
+            <div>
+              <p>
+                We created a different kind of company by bringing data scientists,
+                software engineers, researchers, and creative storytellers into one team.
+              </p>
+              <p>
+                Together, we help organizations understand people, build better systems,
+                and design campaigns that create measurable change.
+              </p>
+            </div>
+            <div>
+              <p>
+                Since then, our work has supported national health campaigns, digital public
+                engagement, election monitoring, agricultural development, and audience
+                intelligence across Africa.
+              </p>
+              <p>
+                Our projects have reached millions of people,
+                helping partners make smarter decisions and deliver stronger results.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="who-mission" aria-labelledby="who-mission-title">
         <h3 id="who-mission-title">Our mission</h3>
-        <p>Turn data into decisions that create impact.</p>
+        <p className="who-mission-statement">Turn data into decisions that create impact.</p>
+        <div className="who-mission-copy">
+          <p>
+            Every project starts with evidence, not assumptions. We build the
+            technology, insights, and campaigns that help organizations understand
+            people, improve decisions, and drive measurable behavior change.
+          </p>
+          <p>If it doesn&apos;t create measurable impact, it isn&apos;t finished.</p>
+        </div>
       </section>
 
       <section className="who-difference" aria-labelledby="who-difference-title">
