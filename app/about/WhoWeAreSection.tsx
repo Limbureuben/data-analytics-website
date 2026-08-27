@@ -176,7 +176,7 @@ export default function WhoWeAreSection() {
                 We created a different kind of company by bringing data scientists,
                 software engineers, researchers, and creative storytellers into one team.
               </p>
-              <p>
+              <p className="who-story-followup">
                 Together, we help organizations understand people, build better systems,
                 and design campaigns that create measurable change.
               </p>
@@ -187,7 +187,7 @@ export default function WhoWeAreSection() {
                 engagement, election monitoring, agricultural development, and audience
                 intelligence across Africa.
               </p>
-              <p>
+              <p className="who-story-followup">
                 Our projects have reached millions of people,
                 helping partners make smarter decisions and deliver stronger results.
               </p>

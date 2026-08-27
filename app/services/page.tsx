@@ -3,10 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "../components/MobileNav";
 import ServiceFAQ from "./ServiceFAQ";
-import servicesHeroImage from "../../public/images/girl3.png";
-import dataTeamImage from "../../public/images/value-curiosity.png";
-import innovationTeamImage from "../../public/images/value-innovation.png";
-import partnershipImage from "../../public/images/quality-assurance-team.png";
 
 export const metadata: Metadata = {
   title: "Services | Digital Town Square",
@@ -17,7 +13,6 @@ const services: Array<{
   id: string;
   title: string;
   tagline: string;
-  summary: string;
   description: string;
   capabilities: string[];
 }> = [
@@ -25,7 +20,6 @@ const services: Array<{
     id: "data-analytics",
     title: "Data & Analytics",
     tagline: "Insight. Evidence. Action.",
-    summary: "Turn complex data into clear insights, trusted dashboards and better decisions.",
     description: "We design and build data infrastructure, research frameworks, and interactive dashboards that help organizations understand their context and make better decisions.",
     capabilities: [
       "Research design & surveys",
@@ -39,7 +33,6 @@ const services: Array<{
     id: "technology-ai",
     title: "Technology & AI",
     tagline: "Systems that scale.",
-    summary: "Build intelligent products, automation and scalable platforms around real needs.",
     description: "We build digital tools, automation workflows, and AI-powered solutions that make organizations more efficient and effective.",
     capabilities: [
       "Custom web & mobile platforms",
@@ -53,7 +46,6 @@ const services: Array<{
     id: "digital-media",
     title: "Digital Campaigns & Media",
     tagline: "Stories that move people.",
-    summary: "Connect audience insight, creative content and media to deliver measurable impact.",
     description: "We produce and distribute campaigns across radio, digital, and community channels. Our approach blends behavioral science with creative storytelling.",
     capabilities: [
       "Behavior change campaigns",
@@ -66,7 +58,6 @@ const services: Array<{
     id: "innovation-ventures",
     title: "Innovation & Ventures",
     tagline: "Ideas into products.",
-    summary: "Validate bold ideas quickly and build new ventures designed for sustainable growth.",
     description: "We co-develop new products, support incubation, and help organizations move from concept to market-ready solutions.",
     capabilities: [
       "Product discovery & prototyping",
@@ -114,58 +105,6 @@ export default function ServicesPage() {
         <Link className="header-cta" href="/contact">Contact Us</Link>
         <MobileNav />
       </header>
-
-      <section className="services-card-hero">
-        <Image
-          className="services-card-hero-image"
-          src={servicesHeroImage}
-          alt="Black African technology consultant seated with a laptop"
-          priority
-          sizes="100vw"
-        />
-        <div className="services-card-hero-copy">
-          <h1>Great ideas.<br />Real opportunity.</h1>
-          <p>Data, technology, media and venture expertise working together to create measurable progress.</p>
-          <a href="#services-grid">Explore services <span aria-hidden="true">→</span></a>
-        </div>
-        <div className="services-hero-note services-hero-note-top"><span>✦</span> Strategy meets execution</div>
-        <div className="services-hero-note services-hero-note-bottom"><strong>4</strong> connected capabilities</div>
-      </section>
-
-      <section className="services-feature-row" aria-label="Featured ways to work with us">
-        <article className="services-feature-card">
-          <div className="services-feature-copy">
-            <h2>For Organisations</h2>
-            <p>Transform complex challenges with an integrated team of data, technology and media experts.</p>
-            <Link href="/contact">Build with us</Link>
-          </div>
-          <Image src={dataTeamImage} alt="Black African data specialists collaborating" sizes="(max-width: 760px) 45vw, 240px" />
-        </article>
-        <article className="services-feature-card">
-          <div className="services-feature-copy">
-            <h2>For Innovators</h2>
-            <p>Validate new ideas, create intelligent products and turn opportunities into scalable ventures.</p>
-            <Link href="/contact">Start an idea</Link>
-          </div>
-          <Image src={innovationTeamImage} alt="Black African innovator developing a new digital product" sizes="(max-width: 760px) 45vw, 240px" />
-        </article>
-      </section>
-
-      <section className="services-card-grid" id="services-grid" aria-label="Our services">
-        <div className="services-list-heading">
-          <div><h2>Our services</h2><p>Four capabilities. One integrated team.</p></div>
-          <Link href="/contact">Start a conversation</Link>
-        </div>
-        <div className="services-card-row">
-          {services.map((service) => (
-            <article className="services-page-card" id={service.id} key={service.id}>
-              <h2>{service.title}</h2>
-              <p>{service.summary}</p>
-              <ul>{service.capabilities.slice(0, 3).map((capability) => <li key={capability}>{capability}</li>)}</ul>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="service-lines" aria-labelledby="service-lines-title">
         <header className="service-lines-intro">
@@ -224,28 +163,6 @@ export default function ServicesPage() {
         </ol>
       </section>
 
-      <section className="services-partnership" aria-labelledby="services-partnership-title">
-        <div className="services-partnership-inner">
-          <div className="services-partnership-copy">
-            <h2 id="services-partnership-title">Good work happens <em>together.</em></h2>
-            <p>We work alongside your people, bring the right specialists into the room and keep every decision focused on meaningful progress.</p>
-          </div>
-          <div className="services-partnership-image">
-            <Image
-              src={partnershipImage}
-              alt="A collaborative technology team celebrating progress together"
-              sizes="(max-width: 760px) calc(100vw - 48px), 34vw"
-            />
-            <div className="services-partnership-stamp"><strong>ONE TEAM</strong><span>Shared momentum</span></div>
-          </div>
-          <ol className="services-partnership-principles">
-            <li><span>01</span><strong>Senior attention</strong><p>Experienced people stay close to the work from start to finish.</p></li>
-            <li><span>02</span><strong>Built together</strong><p>Your team is part of the process, building confidence and lasting capability.</p></li>
-            <li><span>03</span><strong>Visible progress</strong><p>Clear priorities, open communication and outcomes that can be measured.</p></li>
-          </ol>
-        </div>
-      </section>
-
       <ServiceFAQ />
 
       <section className="services-next-step" aria-labelledby="services-next-step-title">
@@ -265,7 +182,6 @@ export default function ServicesPage() {
         <div className="footer-inner">
           <div className="footer-company">
             <Logo useImage footer />
-            <address>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</address>
           </div>
 
           <nav className="footer-nav" aria-label="Footer navigation">

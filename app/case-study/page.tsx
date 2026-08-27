@@ -90,7 +90,7 @@ const projects = [
       ["Actionable", "Strategy output"],
     ],
     logos: [
-      ["/images/logo/bcc-logo.jpeg", "BBC Media Action"],
+      ["/images/logo/bbc-logo.jpeg", "BBC Media Action"],
     ],
     tone: "slate",
   },
@@ -150,7 +150,7 @@ export default function CaseStudyPage() {
         <MobileNav />
       </header>
 
-      <section className="case-study-hero" aria-labelledby="case-study-title">
+      <section className="case-study-hero case-study-hero-intro" aria-labelledby="case-study-title">
         <div className="case-study-hero-copy" data-case-reveal="left">
           <h1 id="case-study-title">
             <span>Projects that</span>
@@ -161,11 +161,31 @@ export default function CaseStudyPage() {
             we have created impact.
           </p>
         </div>
-        <div className="case-study-hero-proof" aria-label="Digital Town Square impact statistics" data-case-reveal="right">
-          <div><strong>10M+</strong><span>People Reached</span></div>
-          <div><strong>500K+</strong><span>Meaningful Engagements</span></div>
-          <div><strong>25+</strong><span>Projects Delivered</span></div>
-          <div><strong>9+</strong><span>Organizations Served</span></div>
+      </section>
+
+      <section className="impact case-study-impact" aria-labelledby="case-study-impact-title" data-case-reveal="fade">
+        <div className="impact-inner">
+          <div className="impact-heading is-revealed">
+            <h2 id="case-study-impact-title">Measurable results across Africa.</h2>
+          </div>
+          <dl className="impact-stats" aria-label="Digital Town Square impact statistics">
+            <div>
+              <dd>10M+</dd>
+              <dt>People Reached</dt>
+            </div>
+            <div>
+              <dd>500K+</dd>
+              <dt>Meaningful Engagements</dt>
+            </div>
+            <div>
+              <dd>25+</dd>
+              <dt>Projects Delivered</dt>
+            </div>
+            <div>
+              <dd>9+</dd>
+              <dt>Organizations Served</dt>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -176,7 +196,7 @@ export default function CaseStudyPage() {
           </div>
           <div className="case-client-logos" aria-label="Project partners">
             {featured.logos.map(([src, alt]) => (
-              <Image key={src} src={src} alt={alt} width={150} height={52} />
+              <Image key={src} src={src} alt={alt} width={220} height={80} />
             ))}
           </div>
         </div>
@@ -190,7 +210,7 @@ export default function CaseStudyPage() {
       <div className={`case-feature-metrics case-tone-${featured.tone}`} aria-label={`${featured.title} results`} data-case-reveal="up">
         <div className="case-metrics">
           {featured.metrics.map(([value, label]) => (
-            <div key={label}><strong data-case-count={value}>{value}</strong><span>{label}</span></div>
+            <div key={label}><strong>{value}</strong><span>{label}</span></div>
           ))}
         </div>
       </div>
@@ -204,7 +224,7 @@ export default function CaseStudyPage() {
                 {project.logos.length > 0 && (
                   <div className="case-client-logos">
                     {project.logos.map(([src, alt]) => (
-                      <Image key={src} src={src} alt={alt} width={130} height={44} />
+                      <Image key={src} src={src} alt={alt} width={190} height={70} />
                     ))}
                   </div>
                 )}
@@ -236,7 +256,6 @@ export default function CaseStudyPage() {
         <div className="footer-inner" data-case-reveal="up">
           <div className="footer-company">
             <Logo footer />
-            <address>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</address>
           </div>
 
           <nav className="footer-nav" aria-label="Footer navigation">

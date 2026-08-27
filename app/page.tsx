@@ -18,9 +18,9 @@ import undpLogo from "../public/images/logo/undp.-hKkppJN_16WllA.webp";
 import usaidLogo from "../public/images/logo/usaid.Coh413GZ_q0Lge.webp";
 import venture37Logo from "../public/images/logo/venture37.DBRp6bAj_1X4vqr.webp";
 import vodacomLogo from "../public/images/logo/vodacom.DDqwzXYW_Z3DoeG.webp";
-import marketImage from "../public/images/market-card.png";
-import peopleImage from "../public/images/people.png";
-import societyImage from "../public/images/society-posta.png";
+import oneImage from "../public/images/one1.jpeg";
+import twoImage from "../public/images/two2.jpeg";
+import threeImage from "../public/images/three3.jpeg";
 
 const navigation = [
   { label: "Home", href: "#home" },
@@ -44,18 +44,18 @@ const understandingCards: Array<{
 }> = [
   {
     title: "Society",
-    image: societyImage,
-    alt: "A busy boulevard running through Jakarta's city center",
+    image: twoImage,
+    alt: "Two professionals collaborating over a laptop and printed research",
   },
   {
     title: "Market",
-    image: marketImage,
-    alt: "Black African women selecting produce at a vibrant open-air market",
+    image: oneImage,
+    alt: "A laptop displaying business analytics and data visualizations",
   },
   {
     title: "People",
-    image: peopleImage,
-    alt: "Black African pedestrians walking across a graphic black-and-white crossing",
+    image: threeImage,
+    alt: "A data analyst reviewing digital marketing results on a monitor",
   },
 ];
 
@@ -463,9 +463,6 @@ export default function Home() {
         <div className="footer-inner" data-scroll-reveal>
           <div className="footer-company">
             <DigitalTownSquareLogo useImage footer />
-            <address>
-              Palm Street-Mbezi Beach, Dar es Salaam, Tanzania
-            </address>
           </div>
 
           <nav className="footer-nav" aria-label="Footer navigation">

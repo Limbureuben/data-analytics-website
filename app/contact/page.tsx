@@ -112,7 +112,6 @@ export default function ContactPage() {
         <div className="footer-inner">
           <div className="footer-company">
             <Logo footer />
-            <address>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</address>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
             <div>

@@ -70,7 +70,6 @@ export default function AboutPage() {
         <div className="footer-inner">
           <div className="footer-company">
             <Logo image footer />
-            <address>Palm Street-Mbezi Beach, Dar es Salaam, Tanzania</address>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
             <div>
