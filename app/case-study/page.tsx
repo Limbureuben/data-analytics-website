@@ -114,6 +114,111 @@ const projects = [
     ],
     tone: "rose",
   },
+  {
+    id: "youth-livelihoods-informal-economy",
+    number: "06",
+    category: "Youth Livelihoods & Informal Economy",
+    title: "Youth Livelihoods & Informal Economy",
+    summary:
+      "Using campaign data and audience analytics to understand how young people engage with livelihood and entrepreneurship content.",
+    details: [
+      ["Delivered through", "Shujaaz Inc."],
+      ["Partners", "Kays Foundation · Agency Fund · Umsizi"],
+      [
+        "DTS role",
+        "Campaign data analysis, audience analytics and performance reporting.",
+      ],
+    ],
+    description:
+      "DTS analysed campaign and audience data to understand reach, engagement and content performance, helping identify what young people were responding to and where campaigns could be improved. The analysis supported evidence-based decisions around youth-focused media, digital engagement and livelihood programming.",
+    metrics: [],
+    logos: [["/images/logo/shujaaz-logo.png", "Shujaaz Inc."]],
+    tone: "green",
+  },
+  {
+    id: "gender-norms-social-change",
+    number: "07",
+    category: "Gender Norms & Social Change",
+    title: "Gender Norms & Social Change",
+    summary:
+      "Using data and audience intelligence to measure how effectively gender-norms campaigns connect with young people across comics, TV shows and digital video content.",
+    details: [
+      ["Delivered through", "Shujaaz Inc."],
+      ["Partners", "MTV Staying Alive Foundation · PATH Kenya"],
+      [
+        "Funders",
+        "Co-Impact · Imaginable Futures · Wellspring Philanthropic Fund · Echidna Giving",
+      ],
+      ["Audience", "Young Kenyans, 15–24"],
+      ["Duration", "2024–2028"],
+      ["Status", "Active"],
+      [
+        "DTS role",
+        "Campaign measurement, audience analytics, content performance tracking and data-driven learning.",
+      ],
+    ],
+    description: [
+      "DTS measures the performance and audience response to campaign content across comics, TV shows and digital video formats, combining platform and audience data to understand what reaches young people, what keeps them engaged and which stories perform best.",
+      "The analysis provides evidence on reach, engagement, content performance and audience behaviour, helping the campaign team understand how different formats and stories are performing and where content can be improved.",
+      "By connecting campaign data with audience insights, DTS supports a continuous measure → learn → adapt process, helping strengthen the effectiveness of storytelling and inform the wider gender-norms change strategy.",
+    ],
+    metrics: [],
+    logos: [["/images/logo/shujaaz-logo.png", "Shujaaz Inc."]],
+    tone: "gold",
+  },
+  {
+    id: "coca-cola-tanzania",
+    number: "08",
+    category: "National PR & Media Campaign",
+    title: "Coca-Cola Tanzania",
+    summary: "National PR & Media Campaign",
+    details: [
+      ["Delivered through", "Calla PR (T) Limited, Kenya"],
+      [
+        "DTS role",
+        "Tanzania media coordination, PR execution & campaign reporting",
+      ],
+      ["Duration", "June 2026 – December 2026"],
+    ],
+    description: [
+      "DTS is supporting the delivery of Coca-Cola Tanzania’s national PR campaign through Calla PR’s regional relationship with Coca-Cola.",
+      "Our role is to turn the campaign strategy into coordinated media execution across Tanzania, connecting campaign messages with national and regional audiences through television, radio and print.",
+    ],
+    deliverables: [
+      [
+        "National Media Outreach",
+        "Coordinating engagement with leading national and regional media across television, radio and print.",
+      ],
+      [
+        "PR & Media Materials",
+        "Supporting campaign messaging, press materials and media kits to maintain clear and consistent communication across media channels.",
+      ],
+      [
+        "Event Media Coordination",
+        "Managing media engagement around campaign events, including outreach, coordination and same-day distribution of approved campaign materials.",
+      ],
+      [
+        "Campaign Measurement & Reporting",
+        "Tracking media activity, earned coverage and delivery against agreed campaign targets, with ongoing reporting throughout the engagement.",
+      ],
+    ],
+    metrics: [
+      ["20+", "Earned media placements per month"],
+      ["2+", "TV interviews per month"],
+      ["5+", "Regional media placements per month"],
+      ["Full", "Event-day media coordination and coverage"],
+    ],
+    status: [
+      "The campaign is currently active and runs through December 2026.",
+      "Performance results will be added following campaign completion and final reporting.",
+    ],
+    closingRole:
+      "Media intelligence, coordination and execution that connects national campaigns with audiences across Tanzania.",
+    logos: [
+      ["/images/logo/coca-cola.CfzaD0v2_Z1Qy61w.webp", "Coca-Cola"],
+    ],
+    tone: "coke",
+  },
 ] as const;
 
 function Logo({ footer = false }: { footer?: boolean }) {
@@ -229,18 +334,72 @@ export default function CaseStudyPage() {
                   </div>
                 )}
               </div>
-              <div className="case-card-body">
-                <div className="case-card-narrative">
-                  <div><strong>Problem</strong><p>{project.problem}</p></div>
-                  <div><strong>Solution</strong><p>{project.solution}</p></div>
-                  <div><strong>Impact</strong><p>{project.impact}</p></div>
+              {"details" in project ? (
+                <div className="case-card-body case-card-body-profile">
+                  <p className="case-card-summary">{project.summary}</p>
+                  <div className="case-card-facts">
+                    {project.details.map(([label, value]) => (
+                      <div key={label}><strong>{label}</strong><p>{value}</p></div>
+                    ))}
+                  </div>
+                  {typeof project.description === "string" ? (
+                    <p className="case-card-description">{project.description}</p>
+                  ) : (
+                    <div className="case-card-description-group">
+                      {project.description.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  )}
+                  {"deliverables" in project && (
+                    <section className="case-card-section" aria-labelledby={`${project.id}-deliverables`}>
+                      <h4 id={`${project.id}-deliverables`}>What DTS delivers</h4>
+                      <div className="case-card-deliverables">
+                        {project.deliverables.map(([title, description]) => (
+                          <article key={title}>
+                            <strong>{title}</strong>
+                            <p>{description}</p>
+                          </article>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                  {project.metrics.length > 0 && (
+                    <section className="case-card-section" aria-labelledby={`${project.id}-targets`}>
+                      <h4 id={`${project.id}-targets`}>Campaign delivery targets</h4>
+                      <div className="case-metrics case-editorial-metrics">
+                        {project.metrics.map(([value, label]) => (
+                          <div key={label}><strong>{value}</strong><span>{label}</span></div>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                  {"status" in project && (
+                    <section className="case-card-status" aria-labelledby={`${project.id}-status`}>
+                      <h4 id={`${project.id}-status`}>Status</h4>
+                      {project.status.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                      <p className="case-card-closing-role">
+                        <strong>DTS role:</strong> {project.closingRole}
+                      </p>
+                    </section>
+                  )}
                 </div>
-                <div className={`case-card-metrics${project.metrics.length === 1 ? " case-card-metrics-single" : ""}`}>
-                  {project.metrics.map(([value, label]) => (
-                    <div key={label}><strong>{value}</strong><span>{label}</span></div>
-                  ))}
+              ) : (
+                <div className="case-card-body">
+                  <div className="case-card-narrative">
+                    <div><strong>Problem</strong><p>{project.problem}</p></div>
+                    <div><strong>Solution</strong><p>{project.solution}</p></div>
+                    <div><strong>Impact</strong><p>{project.impact}</p></div>
+                  </div>
+                  <div className={`case-card-metrics${project.metrics.length === 1 ? " case-card-metrics-single" : ""}`}>
+                    {project.metrics.map(([value, label]) => (
+                      <div key={label}><strong>{value}</strong><span>{label}</span></div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </article>
           ))}
         </div>
