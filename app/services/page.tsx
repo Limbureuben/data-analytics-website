@@ -95,6 +95,7 @@ export default function ServicesPage() {
   return (
     <main className="services-page">
       <header className="site-header">
+        <div className="utility-bar"><span>✉&nbsp;&nbsp; hello@digitaltownsquare.co.tz</span><span className="utility-divider">|</span><span>+255 744 111 221</span><nav className="utility-links"><Link href="/contact">Call</Link><span>/</span><Link href="/contact">Support</Link><span>/</span><Link href="/contact">Contact</Link></nav></div>
         <Logo useImage />
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/">Home</Link>
@@ -102,7 +103,7 @@ export default function ServicesPage() {
           <Link href="/about">About</Link>
           <Link href="/case-study">Case Study</Link>
         </nav>
-        <Link className="header-cta" href="/contact">Contact Us</Link>
+        <Link className="header-cta" href="/contact">Get Solution</Link>
         <MobileNav />
       </header>
 
@@ -186,13 +187,13 @@ export default function ServicesPage() {
 
           <nav className="footer-nav" aria-label="Footer navigation">
             <div>
-              <Link href="/">Home</Link>
-              <Link href="/services">Services</Link>
-              <Link href="/about">About</Link>
+              <Link href="/">HOME</Link>
+              <Link href="/services">SERVICES</Link>
+              <Link href="/about">ABOUT</Link>
             </div>
             <div>
-              <Link href="/case-study">Case Study</Link>
-              <Link href="/contact">Contact</Link>
+              <Link href="/case-study">CASE STUDIES</Link>
+              <Link href="/contact">CONTACT</Link>
             </div>
           </nav>
 

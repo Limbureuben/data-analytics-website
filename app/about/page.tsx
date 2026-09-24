@@ -41,6 +41,7 @@ export default function AboutPage() {
   return (
     <main className="about-page">
       <header className="site-header">
+        <div className="utility-bar"><span>✉&nbsp;&nbsp; hello@digitaltownsquare.co.tz</span><span className="utility-divider">|</span><span>+255 744 111 221</span><nav className="utility-links"><Link href="/contact">Call</Link><span>/</span><Link href="/contact">Support</Link><span>/</span><Link href="/contact">Contact</Link></nav></div>
         <Logo image />
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/">Home</Link>
@@ -51,7 +52,7 @@ export default function AboutPage() {
           <Link href="/case-study">Case Study</Link>
         </nav>
         <Link className="header-cta" href="/contact">
-          Contact Us
+          Get Solution
         </Link>
         <MobileNav />
       </header>

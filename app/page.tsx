@@ -305,6 +305,16 @@ export default function Home() {
   return (
     <main ref={pageRef} className="site-shell" id="home">
       <header className="site-header">
+        <div className="utility-bar">
+          <span>✉&nbsp;&nbsp; hello@digitaltownsquare.co.tz</span>
+          <span className="utility-divider">|</span>
+          <span>+255 744 111 221</span>
+          <nav className="utility-links" aria-label="Utility navigation">
+            <a href="/contact">Call</a><span>/</span>
+            <a href="/contact">Support</a><span>/</span>
+            <a href="/contact">Contact</a>
+          </nav>
+        </div>
         <DigitalTownSquareLogo useImage />
 
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -320,7 +330,7 @@ export default function Home() {
         </nav>
 
         <a className="header-cta" href="/contact">
-          Contact Us
+          Get Solution
         </a>
         <MobileNav />
       </header>
